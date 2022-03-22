@@ -17,7 +17,6 @@ public class TelaInicio extends JFrame{
     private JLabel lb1;
     private JLabel lb2;
     private JTextField tf;
-    private JLabel lb3;
     private JButton bt;
     
     public TelaInicio(){
@@ -39,9 +38,7 @@ public class TelaInicio extends JFrame{
         container.add(lb1, c);
         
         lb2 = new JLabel();
-        lb2.setText("Você é um feiticeiro, estudou por anos na escola de magia "
-                    + "e agora chegou a hora de colocar seus conhecimentos em "
-                    + "prática. Primeiramente, qual o seu nome?");
+        lb2.setText("Você é um feiticeiro, estudou por anos na escola de magia, e agora chegou a hora de colocar seus conhecimentos em prática. Primeiramente, qual o seu nome?");
         c.fill = GridBagConstraints.HORIZONTAL;
         //c.weightx = 0.5;
         c.gridx = 0;

@@ -1,18 +1,9 @@
 package entidades;
 
 import java.util.ArrayList;
-import entidades.Arma;
-import entidades.Bolsa;
-import entidades.Consumivel;
-import entidades.Diario;
-import entidades.Feitico;
 import exceptions.FeiticoNaoListadoException;
-import entidades.IJogador;
-import entidades.Ser;
-import entidades.TipoElemento;
-import java.io.Serializable;
 
-public class Jogador extends Ser implements Serializable, IJogador {
+public class Jogador extends Ser implements IJogador {
     
     private static final long serialVersionUID = 1L;
     
@@ -59,7 +50,7 @@ public class Jogador extends Ser implements Serializable, IJogador {
     }
     
     public ArrayList<Feitico> verFeiticos(TipoElemento tipo){
-        ArrayList<Feitico> feiticosDoTipo = new ArrayList();
+        ArrayList<Feitico> feiticosDoTipo = new ArrayList<>();
         for(Feitico feitico : feiticos){
             if(feitico.getTipoElemento() == tipo){
                 feiticosDoTipo.add(feitico);

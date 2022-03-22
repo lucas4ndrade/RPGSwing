@@ -1,22 +1,17 @@
 package telas;
 
-import controladores.ControladorBatalha;
 import controladores.ControladorBau;
 import entidades.Arma;
-import entidades.Consumivel;
 import java.awt.Container;
 import java.awt.Dimension;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.util.ArrayList;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
-import entidades.Feitico;
-import entidades.Item;
 import javax.swing.JLabel;
 
 public class TelaTabelaArma extends JFrame{

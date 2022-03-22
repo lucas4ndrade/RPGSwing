@@ -13,7 +13,6 @@ import javax.swing.JFrame;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
 import entidades.Feitico;
-import entidades.Consumivel;
 import entidades.Item;
 import exceptions.NadaSelecionadoException;
 import javax.swing.JLabel;

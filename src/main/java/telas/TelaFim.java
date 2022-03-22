@@ -1,7 +1,5 @@
 package telas;
 
-import java.util.Scanner;
-import controladores.ControladorPrincipal;
 import java.awt.Container;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
@@ -29,8 +27,7 @@ public class TelaFim extends JFrame{
         c.ipadx = 200;
         
         lb = new JLabel();
-        lb.setText("O seu herói não foi páreo para os poderosos monstros"
-                    + " que habitam a masmorra!");
+        lb.setText("O seu herói não foi páreo para os poderosos monstros que habitam a masmorra!");
         c.fill = GridBagConstraints.HORIZONTAL;
         c.gridx = 0;
         c.gridy = 0;

@@ -4,6 +4,10 @@ public enum TipoElemento {
     FOGO,
     AGUA,
     GRAMA,
-    PEDRA
-    
+    PEDRA;
+
+    //@TODO implement and use this
+    public String toString() {
+        return "";
+    }
 }

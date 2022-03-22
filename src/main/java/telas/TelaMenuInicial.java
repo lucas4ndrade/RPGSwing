@@ -67,9 +67,4 @@ public class TelaMenuInicial extends JFrame{
         }
         
     }
-    
-    //new game ou continue
-    //new game -> 
-    //continue ->
-    
 }

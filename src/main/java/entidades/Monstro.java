@@ -1,8 +1,5 @@
 package entidades;
 
-import entidades.Ser;
-import entidades.TipoElemento;
-
 public class Monstro extends Ser{
     private int forca;
     private double esquiva;

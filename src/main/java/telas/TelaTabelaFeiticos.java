@@ -50,7 +50,7 @@ public class TelaTabelaFeiticos extends JFrame{
         
         setLocationRelativeTo(null);
         
-        btAtaque = new JButton("ATACAAAAAR");
+        btAtaque = new JButton("ATACAR!!");
         btAtaque.setActionCommand("ATAQUE");
         c.fill = GridBagConstraints.HORIZONTAL;
         c.gridx = 0;

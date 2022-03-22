@@ -1,12 +1,9 @@
 package telas;
 
 import java.util.ArrayList;
-import java.util.Scanner;
 import controladores.ControladorBatalhaBoss;
-import entidades.Feitico;
 import entidades.Jogador;
 import java.awt.Container;
-import java.awt.Dimension;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 import java.awt.event.ActionEvent;
@@ -14,8 +11,6 @@ import java.awt.event.ActionListener;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
-import javax.swing.JScrollPane;
-import javax.swing.JTable;
 
 public class TelaBatalhaBoss  extends TelaEncontro{
         

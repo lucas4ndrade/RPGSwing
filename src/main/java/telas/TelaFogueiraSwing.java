@@ -9,9 +9,7 @@ import java.awt.event.ActionListener;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
-import javax.swing.JTextField;
 import controladores.ControladorFogueira;
-import java.util.ArrayList;
 import javax.swing.ImageIcon;
 
 public class TelaFogueiraSwing extends JFrame{
@@ -33,7 +31,6 @@ public class TelaFogueiraSwing extends JFrame{
     private JLabel lbNarra1;
     private JLabel lbNarra2;
     private JLabel lbNarra3;
-    private JLabel lbNarra4;
     private JLabel lbGrimorios;
     private final JButton btSalvar;
     

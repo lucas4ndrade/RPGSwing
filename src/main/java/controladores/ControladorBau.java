@@ -158,7 +158,7 @@ public class ControladorBau{
     }
     
     public ArrayList<ConteudoTelaBau> compactarItensJogador(){
-        ArrayList<ConteudoTelaBau> conteudos = new ArrayList();
+        ArrayList<ConteudoTelaBau> conteudos = new ArrayList<>();
         ArrayList<Consumivel> consumiveis = ControladorPrincipal.getInstance().getJogador().getConsumiveisBolsa();
         for(Consumivel consumivel: consumiveis){
             ConteudoTelaBau conteudo = new ConteudoTelaBau();

@@ -1,6 +1,5 @@
 package entidades;
 
-import entidades.TipoEvento;
 import java.io.Serializable;
 import java.util.ArrayList;
 
@@ -9,7 +8,7 @@ public class Diario implements Serializable{
     private ArrayList<TipoEvento> eventos;
     
     public Diario(){
-        this.eventos = new ArrayList();
+        this.eventos = new ArrayList<>();
     }
     
     public ArrayList<TipoEvento> verEventos(){

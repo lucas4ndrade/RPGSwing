@@ -203,7 +203,7 @@ public class ControladorBatalha {
     }
 
     private ArrayList<ConteudoTelaBatalha> compactar(ArrayList<Feitico> feiticos) {
-        ArrayList<ConteudoTelaBatalha> conteudoTelaS = new ArrayList();
+        ArrayList<ConteudoTelaBatalha> conteudoTelaS = new ArrayList<>();
         for(Feitico feitico : feiticos){
             ConteudoTelaBatalha conteudoTela = new ConteudoTelaBatalha();
             conteudoTela.feitico = feitico;
@@ -213,7 +213,7 @@ public class ControladorBatalha {
     }
     
     private ArrayList<ConteudoTelaBatalha> compactar(ArrayList<Consumivel> consumiveis, int i) {
-        ArrayList<ConteudoTelaBatalha> conteudoTelaS = new ArrayList();
+        ArrayList<ConteudoTelaBatalha> conteudoTelaS = new ArrayList<>();
         for(Consumivel consumivel : consumiveis){
             ConteudoTelaBatalha conteudoTela = new ConteudoTelaBatalha();
             conteudoTela.consumivel = consumivel;

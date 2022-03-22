@@ -1,5 +1,4 @@
 package controladores;
-;
 
 import telas.TelaMenuInicial;
 import telas.TelaInicio;
@@ -10,7 +9,6 @@ public class ControladorGeral {
     private TelaInicio telaInicio;
     private TelaMenuInicial telaMenuInicial;
     private TelaSavedGame telaSavedGame;
-    private ControladorPrincipal controladorPrincipal;
     private static ControladorGeral instancia;
     
     private ControladorGeral(){

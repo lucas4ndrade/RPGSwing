@@ -189,7 +189,7 @@ public class ControladorBatalhaBoss {
     }
     
     private ArrayList<ConteudoTelaBatalha> compactar(ArrayList<Feitico> feiticos) {
-        ArrayList<ConteudoTelaBatalha> conteudoTelaS = new ArrayList();
+        ArrayList<ConteudoTelaBatalha> conteudoTelaS = new ArrayList<>();
         for(Feitico feitico : feiticos){
             ConteudoTelaBatalha conteudoTela = new ConteudoTelaBatalha();
             conteudoTela.feitico = feitico;
@@ -199,7 +199,7 @@ public class ControladorBatalhaBoss {
     }
     
     private ArrayList<ConteudoTelaBatalha> compactar(ArrayList<Consumivel> consumiveis, int i) {
-        ArrayList<ConteudoTelaBatalha> conteudoTelaS = new ArrayList();
+        ArrayList<ConteudoTelaBatalha> conteudoTelaS = new ArrayList<>();
         for(Consumivel consumivel : consumiveis){
             ConteudoTelaBatalha conteudoTela = new ConteudoTelaBatalha();
             conteudoTela.consumivel = consumivel;
@@ -208,28 +208,6 @@ public class ControladorBatalhaBoss {
         return conteudoTelaS;
     }
     
-    public boolean indiceFeiticoValido(String indiceFeiticoString) {
-        boolean indiceValido = false;
-        Integer cont = 0;
-        for(Feitico feitico : ControladorPrincipal.getInstance().getJogador().getFeiticos()){
-            String contString = Integer.toString(cont);
-            if(indiceFeiticoString.equals(contString)){
-                indiceValido = true;
-                break;
-            }
-            cont++;
-        }
-        if(indiceValido){
-            int indiceFeiticoInt = Integer.parseInt(indiceFeiticoString);
-            if(indiceFeiticoInt >= 0 && indiceFeiticoInt < ControladorPrincipal.getInstance().getJogador().getFeiticos().size()){
-                return true;
-            }else{
-                return false;
-            }
-        }else{
-            return false;
-        }
-    }
     
     public void atualizaDadosTela(){
         if(ControladorPrincipal.getInstance().getJogador() != null){

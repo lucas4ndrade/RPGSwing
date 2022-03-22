@@ -2,13 +2,12 @@ package entidades;
 
 import java.io.Serializable;
 import java.util.ArrayList;
-import java.util.List;
 
 public class Bolsa implements Serializable{
     private ArrayList<Consumivel> consumiveis;
     
     public Bolsa(){
-        consumiveis = new ArrayList();
+        consumiveis = new ArrayList<>();
     }
     
     public void addConsumivel(Consumivel consumivel){

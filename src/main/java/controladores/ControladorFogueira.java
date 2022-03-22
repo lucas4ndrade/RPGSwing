@@ -192,7 +192,7 @@ public class ControladorFogueira {
     }
     
     public ArrayList<ConteudoTelaFogueira> compactarFeiticoPorTipo(TipoElemento tipo){
-        ArrayList<ConteudoTelaFogueira> feiticosCompactados = new ArrayList();
+        ArrayList<ConteudoTelaFogueira> feiticosCompactados = new ArrayList<>();
         for(Feitico feitico: feiticos){
             if(feitico.getTipoElemento() == tipo){
                 ConteudoTelaFogueira novoConteudo = new ConteudoTelaFogueira();
@@ -204,7 +204,7 @@ public class ControladorFogueira {
     }
     
     public ArrayList<ConteudoTelaFogueira> compactarFeitico(){
-        ArrayList<ConteudoTelaFogueira> feiticosCompactados = new ArrayList();
+        ArrayList<ConteudoTelaFogueira> feiticosCompactados = new ArrayList<>();
         for(Feitico feitico: feiticos){
             ConteudoTelaFogueira novoConteudo = new ConteudoTelaFogueira();
             novoConteudo.feitico = feitico;
@@ -214,7 +214,7 @@ public class ControladorFogueira {
     }
     
     public ArrayList<ConteudoTelaFogueira> compactarItem(){
-        ArrayList<ConteudoTelaFogueira> itensCompactados = new ArrayList();
+        ArrayList<ConteudoTelaFogueira> itensCompactados = new ArrayList<>();
         for(Consumivel item: itens){
             ConteudoTelaFogueira novoConteudo = new ConteudoTelaFogueira();
             novoConteudo.item = item;
@@ -224,7 +224,7 @@ public class ControladorFogueira {
     }
     
     public ArrayList<ConteudoTelaFogueira> compactarEvento(){
-        ArrayList<ConteudoTelaFogueira> eventosCompactados = new ArrayList();
+        ArrayList<ConteudoTelaFogueira> eventosCompactados = new ArrayList<>();
         for(TipoEvento evento: eventos){
             ConteudoTelaFogueira novoConteudo = new ConteudoTelaFogueira();
             novoConteudo.evento = evento;

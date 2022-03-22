@@ -1,6 +1,5 @@
 package telas;
 
-import controladores.ControladorFogueira;
 import java.awt.Container;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;

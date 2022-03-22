@@ -13,9 +13,6 @@ import javax.swing.JLabel;
 public class TelaInicioBatalhaBoss extends JFrame{
     
     private JLabel lb1;
-    private JLabel lb2;
-    private JLabel lb3;
-    private JLabel lb4;
     private JButton bt;
     private boolean continuar;
     

@@ -1,8 +1,6 @@
 package entidades;
 
-import java.io.Serializable;
-
-public class Consumivel extends Item implements Serializable{
+public class Consumivel extends Item {
     
     public Consumivel(String nome){
         super(nome);

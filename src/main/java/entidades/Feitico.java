@@ -1,6 +1,5 @@
 package entidades;
 
-import entidades.TipoElemento;
 import java.io.Serializable;
 
 public class Feitico implements Serializable{

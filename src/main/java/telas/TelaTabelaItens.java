@@ -3,7 +3,6 @@ package telas;
 import controladores.ControladorBatalha;
 import controladores.ControladorBatalhaBoss;
 import controladores.ControladorBau;
-import entidades.Consumivel;
 import java.awt.Container;
 import java.awt.Dimension;
 import java.awt.GridBagConstraints;
@@ -15,7 +14,6 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
-import entidades.Feitico;
 import entidades.Item;
 import javax.swing.JLabel;
 
