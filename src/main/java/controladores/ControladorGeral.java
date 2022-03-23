@@ -1,19 +1,22 @@
 package controladores;
 
 import telas.TelaMenuInicial;
+import config.Config;
 import telas.TelaInicio;
 import telas.TelaSavedGame;
+import telas.TelaSelecionarLinguagem;
 
 public class ControladorGeral {
     
+    private TelaSelecionarLinguagem telaConfig;
     private TelaInicio telaInicio;
     private TelaMenuInicial telaMenuInicial;
     private TelaSavedGame telaSavedGame;
     private static ControladorGeral instancia;
     
     private ControladorGeral(){
-        this.telaMenuInicial = new TelaMenuInicial();
-        this.menuInicial();
+        this.telaConfig = new TelaSelecionarLinguagem();
+        telaConfig.mostraTela();
     }
     
     public static ControladorGeral getInstance(){
@@ -39,6 +42,7 @@ public class ControladorGeral {
     }
     
     public void menuInicial(){
+        this.telaMenuInicial = new TelaMenuInicial();
         this.telaMenuInicial.mostraTelaMenuInicial();
     }
     

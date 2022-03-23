@@ -5,8 +5,4 @@ public enum TipoEvento {
     BATALHA,
     BAU;
 
-    //@TODO implement and use this
-    public String toString() {
-        return "";
-    }
 }

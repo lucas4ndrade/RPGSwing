@@ -5,9 +5,4 @@ public enum TipoElemento {
     AGUA,
     GRAMA,
     PEDRA;
-
-    //@TODO implement and use this
-    public String toString() {
-        return "";
-    }
 }
