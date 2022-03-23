@@ -45,7 +45,7 @@ public class TelaSelecionarLinguagem extends JFrame{
         container.add(btEng, c);
 
         btEs = new JButton();
-        btEs.setText("Español");
+        btEs.setText("Español (Mexico)");
         c.fill = GridBagConstraints.HORIZONTAL;
         //c.weightx = 0.5;
         c.gridx = 0;

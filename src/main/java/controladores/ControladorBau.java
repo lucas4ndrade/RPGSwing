@@ -2,11 +2,13 @@ package controladores;
 import telas.TelaBauSwing;
 import entidades.TipoEvento;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.Random;
 
 import config.Config;
 import entidades.Arma;
 import entidades.Consumivel;
+import entidades.Evento;
 import telas.ConteudoTelaBau;
 import telas.TelaDeAviso;
 import telas.TelaTabelaArma;
@@ -105,7 +107,8 @@ public class ControladorBau{
     }
     
     public void finalizaBau(){
-        ControladorPrincipal.getInstance().getJogador().getDiario().addEvento(TipoEvento.BAU);
+        Evento evento = new Evento(TipoEvento.BAU, new Date());
+        ControladorPrincipal.getInstance().getJogador().getDiario().addEvento(evento);
         ControladorPrincipal.getInstance().escolheEncontro();
         
     }

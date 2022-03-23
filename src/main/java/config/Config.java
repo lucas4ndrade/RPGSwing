@@ -1,8 +1,11 @@
 package config;
 
 import java.io.IOException;
+import java.net.URI;
+import java.net.URISyntaxException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
+import java.nio.file.Path;
 
 import com.google.gson.Gson;
 
@@ -24,17 +27,17 @@ public class Config {
         return instancia;
     }
 
-    public void setLang(String selectedLang) throws IOException {        
-        /*String textFilePath = getClass().getResource("/i18n/texts_"+selectedLang+".json").getPath();
-        byte[] jsonFileBytes = Files.readAllLines(Paths.get(textFilePath))
-        String textJsonString = new String(Files.readAllBytes(Paths.get(textFilePath)));
+    public void setLang(String selectedLang) throws IOException, URISyntaxException {        
+        URI textFileURI = getClass().getResource("/i18n/texts_"+selectedLang+".json").toURI();
+        Path textFilePath = Paths.get(textFileURI);
+        String textJsonString = Files.readString(textFilePath);
     
         Gson gson = new Gson();
-        Texts newTexts = gson.fromJson(textJsonString, Texts.class);*/
+        Texts newTexts = gson.fromJson(textJsonString, Texts.class);
 
         lang = selectedLang;
         languageSelected = true;
-        //texts = newTexts;
+        texts = newTexts;
     }
 
     public static String lang() {

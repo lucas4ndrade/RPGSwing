@@ -1,5 +1,6 @@
 package telas;
 
+import entidades.Evento;
 import entidades.Item;
 import entidades.TipoEvento;
 import java.awt.Container;
@@ -19,7 +20,7 @@ import config.Config;
 
 public class TelaListagemBasicaFogueira extends JFrame{
 
-    private  ArrayList<TipoEvento> diario;
+    private ArrayList<Evento> diario;
     private JTable tabelaDiario;
     private JScrollPane spBaseTabela;
     private JButton btOk;
@@ -106,11 +107,11 @@ public class TelaListagemBasicaFogueira extends JFrame{
     }
     
     private void atualizaDadosDiario(){
-        String[] nomeColunas = {"", Config.texts().event};
+        String[] nomeColunas = {"", Config.texts().event, Config.texts().date};
         Object[][] tabelaParaPorNaTabela = new Object[diario.size()][2];
         int i = 0;
-        for(TipoEvento evento: diario){
-            Object[] infos = {i+1, evento};
+        for(Evento evento: diario){
+            Object[] infos = {i+1, evento.getTipo(), evento.getData().toString()};
             tabelaParaPorNaTabela[i] = infos;
             i++;
         }

@@ -2,8 +2,11 @@ package controladores;
 
 import telas.TelaBatalha;
 import java.util.ArrayList;
+import java.util.Date;
+
 import entidades.Arma;
 import entidades.Consumivel;
+import entidades.Evento;
 import telas.ConteudoTelaBatalha;
 import entidades.Feitico;
 import entidades.Monstro;
@@ -79,7 +82,8 @@ public class ControladorBatalha {
             conteudoTelaAtaqueJogador.passouDeNivel = true;
         }
         this.telaBatalha.mostraFimBatalha(conteudoTelaAtaqueJogador);
-        ControladorPrincipal.getInstance().getJogador().getDiario().addEvento(TipoEvento.BATALHA);
+        Evento evento = new Evento(TipoEvento.BATALHA, new Date());
+        ControladorPrincipal.getInstance().getJogador().getDiario().addEvento(evento);
     }
     
     public void saiDaBatalha(){

@@ -5,17 +5,17 @@ import java.util.ArrayList;
 
 public class Diario implements Serializable{
     
-    private ArrayList<TipoEvento> eventos;
+    private ArrayList<Evento> eventos;
     
     public Diario(){
         this.eventos = new ArrayList<>();
     }
     
-    public ArrayList<TipoEvento> verEventos(){
+    public ArrayList<Evento> verEventos(){
         return this.eventos;
     }
 
-    public void addEvento(TipoEvento tipoEvento){
+    public void addEvento(Evento tipoEvento){
         this.eventos.add(tipoEvento);
     }
 

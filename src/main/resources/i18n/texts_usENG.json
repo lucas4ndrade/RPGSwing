@@ -116,5 +116,6 @@
   "nothingSelectedWarning": "Nothing was selected, please select something from the table to perform the action...",
   "nameTooLongWarning": "The name chosen is too big...",
   "emptyNameWarning": "The name cannot be empty...",
-  "consumableName": "Powerfull Hamburguer" 
+  "consumableName": "Powerfull Hamburguer",
+	"date": "date"
 }

@@ -120,4 +120,5 @@ public class Texts {
   public String nameTooLongWarning = "Not Specified";
   public String emptyNameWarning = "Not Specified";
   public String consumableName = "Not Specified";
+  public String date = "Not Specified";
 }

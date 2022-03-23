@@ -1,6 +1,9 @@
 package controladores;
 import java.util.ArrayList;
+import java.util.Date;
+
 import entidades.Consumivel;
+import entidades.Evento;
 import telas.ConteudoTelaFogueira;
 import entidades.Feitico;
 import entidades.TipoElemento;
@@ -15,7 +18,7 @@ import telas.TelaMenuFeiticosFogueira;
 public class ControladorFogueira {
     private TelaFogueiraSwing telaFogueiraS;
     private ArrayList<Consumivel> itens;
-    private ArrayList<TipoEvento> eventos;
+    private ArrayList<Evento> eventos;
     private ArrayList<Feitico> feiticos;
     private static ControladorFogueira instance;
     private String nomeFeiticoNovo;
@@ -176,7 +179,8 @@ public class ControladorFogueira {
     }
     
     public void finalizaFogueira(){
-        ControladorPrincipal.getInstance().getJogador().getDiario().addEvento(TipoEvento.FOGUEIRA);
+        Evento evento = new Evento(TipoEvento.FOGUEIRA, new Date());
+        ControladorPrincipal.getInstance().getJogador().getDiario().addEvento(evento);
         ControladorPrincipal.getInstance().escolheEncontro();
     }
     
@@ -225,7 +229,7 @@ public class ControladorFogueira {
     
     public ArrayList<ConteudoTelaFogueira> compactarEvento(){
         ArrayList<ConteudoTelaFogueira> eventosCompactados = new ArrayList<>();
-        for(TipoEvento evento: eventos){
+        for(Evento evento: eventos){
             ConteudoTelaFogueira novoConteudo = new ConteudoTelaFogueira();
             novoConteudo.evento = evento;
             eventosCompactados.add(novoConteudo);

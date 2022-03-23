@@ -98,7 +98,7 @@
 	"selectSave": "Selecione o herói que deseja excluir ou jogar",
 	"continueText": "CONTINUAR",
 	"delete": "EXCLUIR",
-	"newGame": "NEW GAME",
+	"newGame": "NOVO JOGO",
 	"yourWeapon": "SUA ARMA",
 	"chanveWeapon": "TROCAR ARMA",
 	"playerWeapon": "ARMA DO JOGADOR",
@@ -116,5 +116,6 @@
 	"nothingSelectedWarning": "Nada foi selecionado, por favor selecione algo da tabela para executar a ação...",
 	"nameTooLongWarning": "O nome escolhido é grande demais...",
 	"emptyNameWarning":"O nome não pode estar vazio...",
-  "consumableName": "Feijoada carregada" 
+  "consumableName": "Feijoada carregada",
+	"date": "data"
 }
