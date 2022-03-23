@@ -2,13 +2,14 @@ package telas;
 
 import entidades.Evento;
 import entidades.Item;
-import entidades.TipoEvento;
 import java.awt.Container;
 import java.awt.Dimension;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.text.DateFormat;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -107,11 +108,14 @@ public class TelaListagemBasicaFogueira extends JFrame{
     }
     
     private void atualizaDadosDiario(){
+        DateFormat dateFormater = DateFormat.getDateTimeInstance(DateFormat.SHORT, DateFormat.SHORT, Config.locale());
+
         String[] nomeColunas = {"", Config.texts().event, Config.texts().date};
         Object[][] tabelaParaPorNaTabela = new Object[diario.size()][2];
+
         int i = 0;
         for(Evento evento: diario){
-            Object[] infos = {i+1, evento.getTipo(), evento.getData().toString()};
+            Object[] infos = {i+1, evento.getTipo(), dateFormater.format(evento.getData())};
             tabelaParaPorNaTabela[i] = infos;
             i++;
         }

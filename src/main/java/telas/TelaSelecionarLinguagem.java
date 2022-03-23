@@ -75,7 +75,7 @@ public class TelaSelecionarLinguagem extends JFrame{
             }else if(e.getSource() == btEs){
                 Config.getInstance().setLang("esMX");
             }else if(e.getSource() == btEng){
-                Config.getInstance().setLang("usENG");
+                Config.getInstance().setLang("enUS");
             }
             ocultaTela();
             ControladorGeral.getInstance().menuInicial();

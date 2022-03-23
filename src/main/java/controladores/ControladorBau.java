@@ -5,7 +5,6 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.Random;
 
-import config.Config;
 import entidades.Arma;
 import entidades.Consumivel;
 import entidades.Evento;

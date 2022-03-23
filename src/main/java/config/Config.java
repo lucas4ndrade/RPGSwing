@@ -5,12 +5,13 @@ import java.net.URI;
 import java.net.URISyntaxException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
+import java.util.Locale;
 import java.nio.file.Path;
 
 import com.google.gson.Gson;
 
 public class Config {
-    private static String lang;
+    private static Locale locale;
     private static Config instancia;
     private static Texts texts;
     private static boolean languageSelected;
@@ -35,13 +36,31 @@ public class Config {
         Gson gson = new Gson();
         Texts newTexts = gson.fromJson(textJsonString, Texts.class);
 
-        lang = selectedLang;
+        locale = langToLocale(selectedLang);
         languageSelected = true;
         texts = newTexts;
     }
 
-    public static String lang() {
-        return lang;
+    private Locale langToLocale(String selectedLang) {
+        Locale loc = Locale.getDefault();
+        switch (selectedLang) {
+            case "ptBR":
+                loc = new Locale("pt", "BR");
+                break;
+            case "enUS":
+                loc = Locale.US;
+                break;
+            case "esMX":
+                loc = new Locale("es", "MX");
+                break;
+            default:
+                break;
+        }
+        return loc;
+    }
+
+    public static Locale locale() {
+        return locale;
     }
 
     public static Texts texts() {
