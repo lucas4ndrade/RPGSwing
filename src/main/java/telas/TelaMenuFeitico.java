@@ -10,6 +10,8 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 
+import config.Config;
+
 class TelaMenuFeitico extends JFrame{
     
     private JButton btFogo;
@@ -19,7 +21,7 @@ class TelaMenuFeitico extends JFrame{
     private JLabel lb1;
     
     public TelaMenuFeitico() {
-        super("FEITICOS");
+        super(Config.texts().spells);
         
         setSize(400,300);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -29,7 +31,7 @@ class TelaMenuFeitico extends JFrame{
         GridBagConstraints c = new GridBagConstraints();
         
         lb1 = new JLabel();
-        lb1.setText("Escolha o elemento dos feitiços que deseja ver");
+        lb1.setText(Config.texts().spellElementChoose);
         c.fill = GridBagConstraints.HORIZONTAL;
         //c.weightx = 0.5;
         c.gridx = 0;
@@ -37,7 +39,7 @@ class TelaMenuFeitico extends JFrame{
         container.add(lb1, c);
         
         btFogo = new JButton();
-        btFogo.setText("FOGO");
+        btFogo.setText(Config.texts().fire);
         btFogo.setActionCommand("1");
         c.fill = GridBagConstraints.HORIZONTAL;
         //c.weightx = 0.5;
@@ -46,7 +48,7 @@ class TelaMenuFeitico extends JFrame{
         container.add(btFogo, c);
         
         btAgua = new JButton();
-        btAgua.setText("AGUA");
+        btAgua.setText(Config.texts().water);
         btFogo.setActionCommand("2");
         c.fill = GridBagConstraints.HORIZONTAL;
         //c.weightx = 0.5;
@@ -55,7 +57,7 @@ class TelaMenuFeitico extends JFrame{
         container.add(btAgua, c);
         
         btGrama = new JButton();
-        btGrama.setText("GRAMA");
+        btGrama.setText(Config.texts().grass);
         btFogo.setActionCommand("3");
         c.fill = GridBagConstraints.HORIZONTAL;
         //c.weightx = 0.5;
@@ -64,7 +66,7 @@ class TelaMenuFeitico extends JFrame{
         container.add(btGrama, c);
         
         btPedra = new JButton();
-        btPedra.setText("PEDRA");
+        btPedra.setText(Config.texts().rock);
         btFogo.setActionCommand("4");
         c.fill = GridBagConstraints.HORIZONTAL;
         //c.weightx = 0.5;

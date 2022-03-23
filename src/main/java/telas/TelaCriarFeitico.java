@@ -9,6 +9,8 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
+
+import config.Config;
 import controladores.ControladorFogueira;
 
 public class TelaCriarFeitico extends JFrame{
@@ -25,7 +27,7 @@ public class TelaCriarFeitico extends JFrame{
     private JLabel lblAviso;
     
     public TelaCriarFeitico(){
-        super("CRIAR FEITICO");
+        super(Config.texts().createSpell);
         
         setSize(700,400);
         
@@ -38,7 +40,7 @@ public class TelaCriarFeitico extends JFrame{
         c.ipadx = 200;
         
         lblNome = new JLabel();
-        lblNome.setText("Entre o nome do feitiço");
+        lblNome.setText(Config.texts().spellNameLabel);
         c.fill = GridBagConstraints.HORIZONTAL;
         c.gridx = 0;
         c.gridy = 0;
@@ -50,14 +52,14 @@ public class TelaCriarFeitico extends JFrame{
         c.gridy = 1;
         container.add(nome, c);
         
-        btConfirmar = new JButton("CONFIRMAR");
+        btConfirmar = new JButton(Config.texts().confim);
         btConfirmar.setActionCommand("CONFIRMAR");
         c.fill = GridBagConstraints.HORIZONTAL;
         c.gridx = 0;
         c.gridy = 2;
         container.add(btConfirmar, c);
         
-        btVoltar = new JButton("VOLTAR");
+        btVoltar = new JButton(Config.texts().back);
         btVoltar.setActionCommand("VOLTAR");
         c.fill = GridBagConstraints.HORIZONTAL;
         c.gridx = 0;
@@ -81,41 +83,41 @@ public class TelaCriarFeitico extends JFrame{
         setLocationRelativeTo(null);
         
         lb1 = new JLabel();
-        lb1.setText("Escolha o elemento do feitico novo");
+        lb1.setText(Config.texts().spellElementLabel);
         c.fill = GridBagConstraints.HORIZONTAL;
         c.gridx = 0;
         c.gridy = 0;
         container.add(lb1, c);
         
-        btFogo = new JButton("FOGO");
+        btFogo = new JButton(Config.texts().fire);
         btFogo.setActionCommand("1");
         c.fill = GridBagConstraints.HORIZONTAL;
         c.gridx = 0;
         c.gridy = 1;
         container.add(btFogo, c);
         
-        btAgua = new JButton("AGUA");
+        btAgua = new JButton(Config.texts().water);
         btAgua.setActionCommand("2");
         c.fill = GridBagConstraints.HORIZONTAL;
         c.gridx = 0;
         c.gridy = 2;
         container.add(btAgua, c);
         
-        btGrama = new JButton("GRAMA");
+        btGrama = new JButton(Config.texts().grass);
         btGrama.setActionCommand("3");
         c.fill = GridBagConstraints.HORIZONTAL;
         c.gridx = 0;
         c.gridy = 3;
         container.add(btGrama, c);
         
-        btPedra = new JButton("PEDRA");
+        btPedra = new JButton(Config.texts().rock);
         btPedra.setActionCommand("4");
         c.fill = GridBagConstraints.HORIZONTAL;
         c.gridx = 0;
         c.gridy = 4;
         container.add(btPedra, c);
         
-        btVoltar = new JButton("VOLTAR");
+        btVoltar = new JButton(Config.texts().back);
         btVoltar.setActionCommand("VOLTAR");
         c.fill = GridBagConstraints.HORIZONTAL;
         c.gridx = 0;
@@ -131,7 +133,7 @@ public class TelaCriarFeitico extends JFrame{
     }
     
     public TelaCriarFeitico(boolean erroOuAcerto){
-        super("AVISO");
+        super(Config.texts().warning);
         
         setSize(400,300);
         
@@ -143,21 +145,21 @@ public class TelaCriarFeitico extends JFrame{
         
         if(erroOuAcerto == false){
             lblAviso = new JLabel();
-            lblAviso.setText("Voce não possui grimorios para criar um feitico");
+            lblAviso.setText(Config.texts().noGrimoiresWarning);
             c.fill = GridBagConstraints.HORIZONTAL;
             c.gridx = 0;
             c.gridy = 0;
             container.add(lblAviso, c);
         } else {
             lblAviso = new JLabel();
-            lblAviso.setText("Feitiço criado com sucesso!");
+            lblAviso.setText(Config.texts().sucessCreateSpell);
             c.fill = GridBagConstraints.HORIZONTAL;
             c.gridx = 0;
             c.gridy = 0;
             container.add(lblAviso, c);
         }
         
-        btVoltar = new JButton("OK");
+        btVoltar = new JButton(Config.texts().ok);
         btVoltar.setActionCommand("VOLTAR");
         c.fill = GridBagConstraints.HORIZONTAL;
         c.gridx = 0;

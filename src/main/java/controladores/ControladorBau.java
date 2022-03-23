@@ -3,6 +3,8 @@ import telas.TelaBauSwing;
 import entidades.TipoEvento;
 import java.util.ArrayList;
 import java.util.Random;
+
+import config.Config;
 import entidades.Arma;
 import entidades.Consumivel;
 import telas.ConteudoTelaBau;
@@ -56,7 +58,7 @@ public class ControladorBau{
         
         switch(consumivel){
             case 0: break;
-            case 1: Consumivel consumivelBau = new Consumivel("Pocao de vida");
+            case 1: Consumivel consumivelBau = new Consumivel();
                     this.consumivelBau = consumivelBau;
                     this.temConsumivel = true;
                     break;
@@ -69,7 +71,7 @@ public class ControladorBau{
         }
         
         if(!temArma && !temConsumivel && !temGrimorio){
-            Consumivel consumivelBau = new Consumivel("Pocao de vida");
+            Consumivel consumivelBau = new Consumivel();
             this.consumivelBau = consumivelBau;
             this.temConsumivel = true;
         }

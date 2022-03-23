@@ -17,7 +17,7 @@ public class TelaMenuInicial extends JFrame{
     private JButton btContinue;
     
     public TelaMenuInicial(){
-        super("MENU INICIAL");
+        super(Config.texts().startMenu);
         
         setSize(512,384);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -27,7 +27,7 @@ public class TelaMenuInicial extends JFrame{
         GridBagConstraints c = new GridBagConstraints();
         
         btNewGame = new JButton();
-        btNewGame.setText("NEW GAME");
+        btNewGame.setText(Config.texts().newGame);
         c.fill = GridBagConstraints.HORIZONTAL;
         //c.weightx = 0.5;
         c.gridx = 0;
@@ -35,7 +35,7 @@ public class TelaMenuInicial extends JFrame{
         container.add(btNewGame, c);
         
         btContinue = new JButton();
-        btContinue.setText("CONTINUE");
+        btContinue.setText(Config.texts().continueText);
         c.fill = GridBagConstraints.HORIZONTAL;
         //c.weightx = 0.5;
         c.gridx = 1;

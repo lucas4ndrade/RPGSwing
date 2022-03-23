@@ -1,7 +1,6 @@
 package controladores;
 
 import telas.TelaMenuInicial;
-import config.Config;
 import telas.TelaInicio;
 import telas.TelaSavedGame;
 import telas.TelaSelecionarLinguagem;

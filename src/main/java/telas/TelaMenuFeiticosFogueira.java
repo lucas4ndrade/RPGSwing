@@ -16,6 +16,8 @@ import javax.swing.JLabel;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
 
+import config.Config;
+
 public class TelaMenuFeiticosFogueira extends JFrame{
     private JButton btFogo;
     private JButton btAgua;
@@ -28,7 +30,7 @@ public class TelaMenuFeiticosFogueira extends JFrame{
     private JButton btOk;
     
     public TelaMenuFeiticosFogueira() {
-        super("FEITICOS");
+        super(Config.texts().spells);
         
         setSize(400,300);
         
@@ -39,7 +41,7 @@ public class TelaMenuFeiticosFogueira extends JFrame{
         setLocationRelativeTo(null);
         
         lb1 = new JLabel();
-        lb1.setText("Escolha o elemento dos feitiços que deseja ver");
+        lb1.setText(Config.texts().spellElementChoose);
         c.fill = GridBagConstraints.HORIZONTAL;
         //c.weightx = 0.5;
         c.gridx = 0;
@@ -47,7 +49,7 @@ public class TelaMenuFeiticosFogueira extends JFrame{
         container.add(lb1, c);
         
         btFogo = new JButton();
-        btFogo.setText("FOGO");
+        btFogo.setText(Config.texts().fire);
         btFogo.setActionCommand("1");
         c.fill = GridBagConstraints.HORIZONTAL;
         //c.weightx = 0.5;
@@ -56,7 +58,7 @@ public class TelaMenuFeiticosFogueira extends JFrame{
         container.add(btFogo, c);
         
         btAgua = new JButton();
-        btAgua.setText("AGUA");
+        btAgua.setText(Config.texts().water);
         btAgua.setActionCommand("2");
         c.fill = GridBagConstraints.HORIZONTAL;
         //c.weightx = 0.5;
@@ -65,7 +67,7 @@ public class TelaMenuFeiticosFogueira extends JFrame{
         container.add(btAgua, c);
         
         btGrama = new JButton();
-        btGrama.setText("GRAMA");
+        btGrama.setText(Config.texts().grass);
         btGrama.setActionCommand("3");
         c.fill = GridBagConstraints.HORIZONTAL;
         //c.weightx = 0.5;
@@ -74,7 +76,7 @@ public class TelaMenuFeiticosFogueira extends JFrame{
         container.add(btGrama, c);
         
         btPedra = new JButton();
-        btPedra.setText("PEDRA");
+        btPedra.setText(Config.texts().rock);
         btPedra.setActionCommand("4");
         c.fill = GridBagConstraints.HORIZONTAL;
         //c.weightx = 0.5;
@@ -90,7 +92,7 @@ public class TelaMenuFeiticosFogueira extends JFrame{
     }
     
     public TelaMenuFeiticosFogueira(TipoElemento tipo, ArrayList<ConteudoTelaFogueira> conteudo){
-        super("FEITICOS DE " + tipo.toString());
+        super(Config.texts().spellsListLabel + tipo.toString());
         
         feiticos = new ArrayList<>();
         for(ConteudoTelaFogueira cont : conteudo){
@@ -116,7 +118,7 @@ public class TelaMenuFeiticosFogueira extends JFrame{
         
         setLocationRelativeTo(null);
         
-        btOk = new JButton("OK");
+        btOk = new JButton(Config.texts().ok);
         btOk.setActionCommand("OK");
         c.fill = GridBagConstraints.HORIZONTAL;
         c.gridx = 0;
@@ -137,7 +139,7 @@ public class TelaMenuFeiticosFogueira extends JFrame{
     }
     
     private void atualizaDados(){
-        String[] nomeColunas = {"INDICE", "NOME", "DANO", "ELEMENTO"};
+        String[] nomeColunas = {Config.texts().index, Config.texts().name, Config.texts().damage, Config.texts().element};
         Object[][] tabelaParaPorNaTabela = new Object[feiticos.size()][4];
         int i = 0;
         for(Feitico feitico: feiticos){

@@ -10,6 +10,8 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 
+import config.Config;
+
 public class TelaFimBatalha extends JFrame{
 
     private JLabel lb1;
@@ -22,7 +24,7 @@ public class TelaFimBatalha extends JFrame{
     private JButton bt;
     
     public TelaFimBatalha(ConteudoTelaBatalha conteudoTela){
-        super("PARABÉNS!!!");
+        super(Config.texts().congratulationExclamation);
     
         setSize(900,700);
 
@@ -33,42 +35,42 @@ public class TelaFimBatalha extends JFrame{
         c.ipadx = 200;
         
         lb1 = new JLabel();
-        lb1.setText("O herói defere um último feitiço de misericórdia no monstro!");
+        lb1.setText(Config.texts().lastHitNarration);
         c.fill = GridBagConstraints.HORIZONTAL;
         c.gridx = 0;
         c.gridy = 0;
         container.add(lb1, c);
         
         lb2 = new JLabel();
-        lb2.setText("Dano causado: " + conteudoTela.danoAtaque);
+        lb2.setText(Config.texts().causedDamage + conteudoTela.danoAtaque);
         c.fill = GridBagConstraints.HORIZONTAL;
         c.gridx = 0;
         c.gridy = 1;
         container.add(lb2, c);
         
         lb3 = new JLabel();
-        lb3.setText("O poderoso " + conteudoTela.atacado.getNome() + " finalmente cai ao chão!");
+        lb3.setText(Config.texts().theMighty + conteudoTela.atacado.getNome() + Config.texts().finnalyFalls);
         c.fill = GridBagConstraints.HORIZONTAL;
         c.gridx = 0;
         c.gridy = 2;
         container.add(lb3, c);
         
         lb4 = new JLabel();
-        lb4.setText("Voce encontrou a chave para batalhar com o boss final!!");
+        lb4.setText(Config.texts().keyFindNarration1);
         c.fill = GridBagConstraints.HORIZONTAL;
         c.gridx = 0;
         c.gridy = 3;
         container.add(lb4, c);
         
         lb5 = new JLabel();
-        lb5.setText("A próxima vez que encontrar uma fogueira poderá escolher enfrenta-lo");
+        lb5.setText(Config.texts().keyFindNarration2);
         c.fill = GridBagConstraints.HORIZONTAL;
         c.gridx = 0;
         c.gridy = 4;
         container.add(lb5, c);
         
         lb6 = new JLabel();
-        lb6.setText("CUIDADO!! Lembre-se que ele eh nivel 10!");
+        lb6.setText(Config.texts().keyFindNarration3);
         c.fill = GridBagConstraints.HORIZONTAL;
         c.gridx = 0;
         c.gridy = 5;
@@ -76,7 +78,7 @@ public class TelaFimBatalha extends JFrame{
         
         if(conteudoTela.passouDeNivel){
             lb7 = new JLabel();
-            lb7.setText("Parabens!! Voce passou de nivel!!");
+            lb7.setText(Config.texts().leveUP);
             c.fill = GridBagConstraints.HORIZONTAL;
             c.gridx = 0;
             c.gridy = 6;
@@ -84,7 +86,7 @@ public class TelaFimBatalha extends JFrame{
         }
         
         bt = new JButton();
-        bt.setText("OK");
+        bt.setText(Config.texts().ok);
         c.fill = GridBagConstraints.HORIZONTAL;
         c.gridx = 0;
         c.gridy = 7;

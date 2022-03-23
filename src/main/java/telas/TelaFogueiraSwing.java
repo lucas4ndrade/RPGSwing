@@ -9,6 +9,8 @@ import java.awt.event.ActionListener;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+
+import config.Config;
 import controladores.ControladorFogueira;
 import javax.swing.ImageIcon;
 
@@ -35,7 +37,7 @@ public class TelaFogueiraSwing extends JFrame{
     private final JButton btSalvar;
     
     public TelaFogueiraSwing(ConteudoTelaFogueira jogador){
-        super("FOGUEIRA");
+        super(Config.texts().bonfire);
         
         setSize(900,735);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -48,35 +50,35 @@ public class TelaFogueiraSwing extends JFrame{
         
         /*----------DADOS JOGADOR----------*/
         lbNome = new JLabel();
-        lbNome.setText("NOME: " + jogador.jogador.getNome());
+        lbNome.setText(Config.texts().name + jogador.jogador.getNome());
         c.fill = GridBagConstraints.HORIZONTAL;
         c.gridx = 0;
         c.gridy = 0;
         container.add(lbNome, c);
 
         lbNivel = new JLabel();
-        lbNivel.setText("NIVEL: " + jogador.jogador.getNivelInt());
+        lbNivel.setText(Config.texts().level + jogador.jogador.getNivelInt());
         c.fill = GridBagConstraints.HORIZONTAL;
         c.gridx = 0;
         c.gridy = 1;
         container.add(lbNivel, c);
 
         lbVida = new JLabel();
-        lbVida.setText("VIDA: " + jogador.jogador.getVidaAtual() + "/" + jogador.jogador.getVidaTotal());
+        lbVida.setText(Config.texts().life + jogador.jogador.getVidaAtual() + "/" + jogador.jogador.getVidaTotal());
         c.fill = GridBagConstraints.HORIZONTAL;
         c.gridx = 0;
         c.gridy = 2;
         container.add(lbVida, c);
 
         lbDanoArma = new JLabel();
-        lbDanoArma.setText("DANO DA ARMA: " + jogador.jogador.getArma().getDano());
+        lbDanoArma.setText(Config.texts().weaponDamage + jogador.jogador.getArma().getDano());
         c.fill = GridBagConstraints.HORIZONTAL;
         c.gridx = 0;
         c.gridy = 3;
         container.add(lbDanoArma, c);
         
         lbGrimorios = new JLabel();
-        lbGrimorios.setText("GRIMORIOS: " + jogador.jogador.getGrimorios());
+        lbGrimorios.setText(Config.texts().grimoires + jogador.jogador.getGrimorios());
         c.fill = GridBagConstraints.HORIZONTAL;
         c.gridx = 0;
         c.gridy = 4;
@@ -108,7 +110,7 @@ public class TelaFogueiraSwing extends JFrame{
         
         /*----------NARRACAO----------*/
         lbNarra1 = new JLabel();
-        lbNarra1.setText("Voce Encontrou uma fogueira!");
+        lbNarra1.setText(Config.texts().bonfireFindNarration1);
         c.fill = GridBagConstraints.HORIZONTAL;
         c.gridwidth = 3;
         c.gridx = 0;
@@ -116,14 +118,14 @@ public class TelaFogueiraSwing extends JFrame{
         container.add(lbNarra1, c);
         
         lbNarra2 = new JLabel();
-        lbNarra2.setText("Voce se sente regenerado..");
+        lbNarra2.setText(Config.texts().bonfireFindNarration2);
         c.fill = GridBagConstraints.HORIZONTAL;
         c.gridx = 0;
         c.gridy = 7;
         container.add(lbNarra2, c);
         
         lbNarra3 = new JLabel();
-        lbNarra3.setText("O que deseja fazer?");
+        lbNarra3.setText(Config.texts().bonfireFindNarration3);
         c.fill = GridBagConstraints.HORIZONTAL;
         c.gridx = 0;
         c.gridy = 8;
@@ -131,7 +133,7 @@ public class TelaFogueiraSwing extends JFrame{
                
         
         /*----------BOTOES----------*/
-        btDiario = new JButton("VER DIARIO");
+        btDiario = new JButton(Config.texts().seeDiary);
         btDiario.setActionCommand("1");
         c.fill = GridBagConstraints.HORIZONTAL;
         c.gridwidth = 1;
@@ -139,42 +141,42 @@ public class TelaFogueiraSwing extends JFrame{
         c.gridy = 9;
         container.add(btDiario, c);
         
-        btVerBolsa = new JButton("VER BOLSA");
+        btVerBolsa = new JButton(Config.texts().seeBag);
         btVerBolsa.setActionCommand("2");
         c.fill = GridBagConstraints.HORIZONTAL;
         c.gridx = 1;
         c.gridy = 9;
         container.add(btVerBolsa, c);
         
-        btVerFeiticos = new JButton("VER FEITICOS");
+        btVerFeiticos = new JButton(Config.texts().seeSpells);
         btVerFeiticos.setActionCommand("4");
         c.fill = GridBagConstraints.HORIZONTAL;
         c.gridx = 2;
         c.gridy = 9;
         container.add(btVerFeiticos, c);
         
-        btDescartarItens = new JButton("DESCARTAR ITENS");
+        btDescartarItens = new JButton(Config.texts().discardItens);
         btDescartarItens.setActionCommand("3");
         c.fill = GridBagConstraints.HORIZONTAL;
         c.gridx = 0;
         c.gridy = 10;
         container.add(btDescartarItens, c);
         
-        btCriarFeiticos = new JButton("CRIAR FEITICO");
+        btCriarFeiticos = new JButton(Config.texts().createSpell);
         btCriarFeiticos.setActionCommand("5");
         c.fill = GridBagConstraints.HORIZONTAL;
         c.gridx = 1;
         c.gridy = 10;
         container.add(btCriarFeiticos, c);
         
-        btEsquecerFeiticos = new JButton("ESQUECER FEITICO");
+        btEsquecerFeiticos = new JButton(Config.texts().forgetSpell);
         btEsquecerFeiticos.setActionCommand("6");
         c.fill = GridBagConstraints.HORIZONTAL;
         c.gridx = 2;
         c.gridy = 10;
         container.add(btEsquecerFeiticos, c);
         
-        btSair = new JButton("SAIR DA FOGUEIRA");
+        btSair = new JButton(Config.texts().exitBonfire);
         btSair.setActionCommand("0");
         c.fill = GridBagConstraints.HORIZONTAL;
         c.gridwidth = 3;
@@ -182,7 +184,7 @@ public class TelaFogueiraSwing extends JFrame{
         c.gridy = 11;
         container.add(btSair, c);
         
-        btSalvar = new JButton("SALVAR JOGO");
+        btSalvar = new JButton(Config.texts().saveGame);
         btSalvar.setActionCommand("7");
         c.fill = GridBagConstraints.HORIZONTAL;
         c.gridwidth = 3;
@@ -191,7 +193,7 @@ public class TelaFogueiraSwing extends JFrame{
         container.add(btSalvar, c);
         
         if(jogador.jogador.getPossuiChave()){
-            btSalaBoss = new JButton("IR PARA A SALA DO BOSS");
+            btSalaBoss = new JButton(Config.texts().goToBossRoom);
             btSalaBoss.setActionCommand("8");
             c.fill = GridBagConstraints.HORIZONTAL;
             c.gridx = 0;
@@ -220,8 +222,8 @@ public class TelaFogueiraSwing extends JFrame{
 
     public void updateData(ConteudoTelaFogueira jogador) {
         if(jogador.jogador != null){
-            lbDanoArma.setText("DANO DA ARMA: " + jogador.jogador.getArma().getDano());
-            lbGrimorios.setText("GRIMORIOS: " + jogador.jogador.getGrimorios());
+            lbDanoArma.setText(Config.texts().weaponDamage + jogador.jogador.getArma().getDano());
+            lbGrimorios.setText(Config.texts().grimoires + jogador.jogador.getGrimorios());
         }
     }
     

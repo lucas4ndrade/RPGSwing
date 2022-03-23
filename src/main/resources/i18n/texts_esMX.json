@@ -115,5 +115,6 @@
   "notListedSpellWarning": "El hechizo ordenado no está en la lista",
   "nothingSelectedWarning": "No se seleccionó nada, seleccione algo de la tabla para realizar la acción...",
   "nameTooLongWarning": "El nombre elegido es demasiado grande...",
-  "emptyNameWarning": "El nombre no puede estar vacío..."
+  "emptyNameWarning": "El nombre no puede estar vacío...",
+  "consumableName": "Burrito medicinal" 
 }

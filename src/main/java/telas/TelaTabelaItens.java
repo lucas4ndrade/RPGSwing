@@ -14,6 +14,8 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
+
+import config.Config;
 import entidades.Item;
 import javax.swing.JLabel;
 
@@ -33,7 +35,7 @@ public class TelaTabelaItens extends JFrame{
     private boolean ehBoss;
     
     public TelaTabelaItens(ArrayList<ConteudoTelaBau> itens){
-        super("BOLSA");
+        super(Config.texts().bag);
         this.itensTabelaJogador = new ArrayList<>();
         for(ConteudoTelaBau item: itens){
             itensTabelaJogador.add(item.item);
@@ -56,7 +58,7 @@ public class TelaTabelaItens extends JFrame{
         
         setLocationRelativeTo(null);
         
-        btOk = new JButton("OK");
+        btOk = new JButton(Config.texts().ok);
         btOk.setActionCommand("OK");
         c.fill = GridBagConstraints.HORIZONTAL;
         c.gridx = 0;
@@ -68,7 +70,7 @@ public class TelaTabelaItens extends JFrame{
     }
     
     public TelaTabelaItens(ArrayList<ConteudoTelaBau> itensJogador, ConteudoTelaBau itemBau){
-        super("PEGAR ITEM");
+        super(Config.texts().takeItem);
         this.itensTabelaJogador = new ArrayList<>();
         for(ConteudoTelaBau item: itensJogador){
             itensTabelaJogador.add(item.item);
@@ -94,7 +96,7 @@ public class TelaTabelaItens extends JFrame{
         
         setLocationRelativeTo(null);
         
-        txtBolsa = new JLabel("BOLSA");
+        txtBolsa = new JLabel(Config.texts().bag);
         c.fill = GridBagConstraints.HORIZONTAL;
         c.gridx = 0;
         c.gridy = 0;
@@ -112,13 +114,13 @@ public class TelaTabelaItens extends JFrame{
         
         setLocationRelativeTo(null);
         
-        txtBau = new JLabel("BAU");
+        txtBau = new JLabel(Config.texts().chest);
         c.fill = GridBagConstraints.HORIZONTAL;
         c.gridx = 1;
         c.gridy = 0;
         container.add(txtBau, c);
         
-        btPegar = new JButton("PEGAR");
+        btPegar = new JButton(Config.texts().take);
         btPegar.setActionCommand("PEGAR");
         c.fill = GridBagConstraints.HORIZONTAL;
         c.gridwidth = 2;
@@ -126,7 +128,7 @@ public class TelaTabelaItens extends JFrame{
         c.gridy = 2;
         container.add(btPegar, c);
         
-        btOk = new JButton("VOLTAR");
+        btOk = new JButton(Config.texts().back);
         btOk.setActionCommand("OK");
         c.fill = GridBagConstraints.HORIZONTAL;
         c.gridx = 0;
@@ -139,7 +141,7 @@ public class TelaTabelaItens extends JFrame{
     }
 
     TelaTabelaItens(ArrayList<ConteudoTelaBatalha> conteudoTelaS , boolean ehBoss) {
-        super("ITENS JOGADOR");
+        super(Config.texts().playerItens);
         indiceItem = -1;
         setSize(600,330);
         this.ehBoss = ehBoss;
@@ -165,14 +167,14 @@ public class TelaTabelaItens extends JFrame{
         
         setLocationRelativeTo(null);
         
-        btUsar = new JButton("USAR");
+        btUsar = new JButton(Config.texts().use);
         btUsar.setActionCommand("USAR");
         c.fill = GridBagConstraints.HORIZONTAL;
         c.gridx = 0;
         c.gridy = 0;
         container.add(btUsar, c);
         
-        btOk = new JButton("VOLTAR");
+        btOk = new JButton(Config.texts().back);
         btOk.setActionCommand("OK");
         c.fill = GridBagConstraints.HORIZONTAL;
         c.gridx = 0;
@@ -193,7 +195,7 @@ public class TelaTabelaItens extends JFrame{
     }
     
     private void atualizaDados(){
-        String[] nomeColunas = {"", "NOME"};
+        String[] nomeColunas = {"", Config.texts().name};
         Object[][] tabelaParaPorNaTabelaBolsa = new Object[itensTabelaJogador.size()][2];
         int i = 0;
         for(Item item: itensTabelaJogador){
@@ -211,7 +213,7 @@ public class TelaTabelaItens extends JFrame{
     }
     
     private void atualizaDadosSoParaJogador(){
-        String[] nomeColunas = {"", "NOME"};
+        String[] nomeColunas = {"", Config.texts().name};
         Object[][] tabelaParaPorNaTabelaBolsa = new Object[itensTabelaJogador.size()][2];
         int i = 0;
         for(Item item: itensTabelaJogador){

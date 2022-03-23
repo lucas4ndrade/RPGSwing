@@ -9,6 +9,8 @@ import java.util.ArrayList;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+
+import config.Config;
 import controladores.ControladorBatalha;
 import entidades.Jogador;
 import javax.swing.ImageIcon;
@@ -39,7 +41,7 @@ public class TelaBatalha extends TelaEncontro{
     
     
     public TelaBatalha(){
-        super("BATALHA");
+        super(Config.texts().battle);
     
         setSize(900,700);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -52,21 +54,21 @@ public class TelaBatalha extends TelaEncontro{
         
         /*----------DADOS JOGADOR----------*/
         lbNome = new JLabel();
-        lbNome.setText("NOME: ");
+        lbNome.setText(Config.texts().name);
         c.fill = GridBagConstraints.HORIZONTAL;
         c.gridx = 0;
         c.gridy = 0;
         container.add(lbNome, c);
 
         lbNivel = new JLabel();
-        lbNivel.setText("NIVEL: ");
+        lbNivel.setText(Config.texts().level);
         c.fill = GridBagConstraints.HORIZONTAL;
         c.gridx = 0;
         c.gridy = 1;
         container.add(lbNivel, c);
 
         lbVida = new JLabel();
-        lbVida.setText("VIDA: ");
+        lbVida.setText(Config.texts().life);
         c.fill = GridBagConstraints.HORIZONTAL;
         c.gridx = 0;
         c.gridy = 2;
@@ -104,7 +106,7 @@ public class TelaBatalha extends TelaEncontro{
         container.add(lbVazia, c);
         /*----------DADOS MONSTRO----------*/
         lbNomeMonstro = new JLabel();
-        lbNomeMonstro.setText("NOME MONSTRO: ");
+        lbNomeMonstro.setText(Config.texts().monsterName);
         c.fill = GridBagConstraints.HORIZONTAL;
         c.gridx = 2;
         c.gridy = 0;
@@ -117,7 +119,7 @@ public class TelaBatalha extends TelaEncontro{
         container.add(lbNivelMonstro, c);
 
         lbVidaMonstro = new JLabel();
-        lbVidaMonstro.setText("VIDA MONSTRO: ");
+        lbVidaMonstro.setText(Config.texts().monsterLife);
         c.fill = GridBagConstraints.HORIZONTAL;
         c.gridx = 2;
         c.gridy = 2;
@@ -184,7 +186,7 @@ public class TelaBatalha extends TelaEncontro{
         c.gridwidth = 1;
         /*----------BOTOES 1----------*/
         bt1 = new JButton();
-        bt1.setText("Atacar Monstro");
+        bt1.setText(Config.texts().atackMonster);
         bt1.setActionCommand("1");
         c.fill = GridBagConstraints.HORIZONTAL;
         //c.weightx = 0.5;
@@ -193,7 +195,7 @@ public class TelaBatalha extends TelaEncontro{
         container.add(bt1, c);
         
         bt2 = new JButton();
-        bt2.setText("Analizar Monstro");
+        bt2.setText(Config.texts().analizeMonster);
         bt2.setActionCommand("2");
         c.fill = GridBagConstraints.HORIZONTAL;
         //c.weightx = 0.5;
@@ -202,7 +204,7 @@ public class TelaBatalha extends TelaEncontro{
         container.add(bt2, c);
         
         bt3 = new JButton();
-        bt3.setText("Ver Feitiços");
+        bt3.setText(Config.texts().seeSpells);
         bt3.setActionCommand("3");
         c.fill = GridBagConstraints.HORIZONTAL;
         //c.weightx = 0.5;
@@ -219,7 +221,7 @@ public class TelaBatalha extends TelaEncontro{
         container.add(bt4, c);
         /*----------BOTOES 2----------*/
         bt5 = new JButton();
-        bt5.setText("Usar Item");
+        bt5.setText(Config.texts().useItem);
         bt5.setActionCommand("5");
         c.fill = GridBagConstraints.HORIZONTAL;
         //c.weightx = 0.5;
@@ -228,7 +230,7 @@ public class TelaBatalha extends TelaEncontro{
         container.add(bt5, c);
         
         bt6 = new JButton();
-        bt6.setText("Meus Atributos");
+        bt6.setText(Config.texts().myAttrs);
         bt6.setActionCommand("6");
         c.fill = GridBagConstraints.HORIZONTAL;
         //c.weightx = 0.5;
@@ -301,16 +303,16 @@ public class TelaBatalha extends TelaEncontro{
 
     public void atualizaDados(ConteudoTelaBatalha dadosTelaCompactados) {
         if(dadosTelaCompactados.jogador != null){
-            String vidaJogador = ("VIDA: " +
+            String vidaJogador = (Config.texts().life +
                     dadosTelaCompactados.jogador.getVidaAtual()
                 + "/" + dadosTelaCompactados.jogador.getVidaTotal());
             lbVida.setText(vidaJogador);
-            lbVidaMonstro.setText("VIDA: " +
+            lbVidaMonstro.setText(Config.texts().monsterLife +
                     dadosTelaCompactados.monstro.getVidaAtual()
                     + "/" + dadosTelaCompactados.monstro.getVidaTotal());
             
-            lbNome.setText("NOME: " + dadosTelaCompactados.jogador.getNome());
-            lbNivel.setText("NIVEL: " + dadosTelaCompactados.jogador.getNivelInt());
+            lbNome.setText(Config.texts().name + dadosTelaCompactados.jogador.getNome());
+            lbNivel.setText(Config.texts().level + dadosTelaCompactados.jogador.getNivelInt());
             lbNomeMonstro.setText(dadosTelaCompactados.monstro.getNome());
             
             lbNarra1.setText("...");
@@ -322,8 +324,8 @@ public class TelaBatalha extends TelaEncontro{
 
     public void mostraAtaque(ConteudoTelaBatalha conteudoTelaAtaqueJogador, ConteudoTelaBatalha conteudoTelaAtaqueMonstro) {
         ControladorBatalha.getInstance().atualizaDadosTela();
-        lbNarra1.setText(conteudoTelaAtaqueJogador.atacante.getNome() + " ataca " + conteudoTelaAtaqueJogador.atacado.getNome() + " com " + conteudoTelaAtaqueJogador.feitico.getNome() + " causando " + conteudoTelaAtaqueJogador.danoAtaque + " de dano");
-        lbNarra2.setText(conteudoTelaAtaqueMonstro.atacante.getNome() + " ataca " + conteudoTelaAtaqueMonstro.atacado.getNome() + " causando " + conteudoTelaAtaqueMonstro.danoAtaque + " de dano");
+        lbNarra1.setText(conteudoTelaAtaqueJogador.atacante.getNome() + Config.texts().atacks + conteudoTelaAtaqueJogador.atacado.getNome() + Config.texts().with + conteudoTelaAtaqueJogador.feitico.getNome() + Config.texts().with + conteudoTelaAtaqueJogador.danoAtaque + Config.texts().ofDamage);
+        lbNarra2.setText(conteudoTelaAtaqueMonstro.atacante.getNome() + Config.texts().atacks + conteudoTelaAtaqueMonstro.atacado.getNome() + Config.texts().causing + conteudoTelaAtaqueMonstro.danoAtaque + Config.texts().ofDamage);
         if(conteudoTelaAtaqueMonstro.atacado.getVidaAtual()<=0){
             ControladorBatalha.getInstance().gameOver();
         }

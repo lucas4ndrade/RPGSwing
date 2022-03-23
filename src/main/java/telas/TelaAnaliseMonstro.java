@@ -9,6 +9,8 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 
+import config.Config;
+
 public class TelaAnaliseMonstro extends JFrame{
     
     private JLabel lbNome;
@@ -19,7 +21,7 @@ public class TelaAnaliseMonstro extends JFrame{
     private JButton btVoltar;
     
     public TelaAnaliseMonstro(ConteudoTelaBatalha conteudoTela){
-        super("ANALISE MONSTRO");
+        super(Config.texts().monsterAnalisis);
         
         setSize(200,200);
         
@@ -28,7 +30,7 @@ public class TelaAnaliseMonstro extends JFrame{
         GridBagConstraints c = new GridBagConstraints();
         
         lbNome = new JLabel();
-        lbNome.setText("NOME: " + conteudoTela.monstro.getNome());
+        lbNome.setText(Config.texts().name + conteudoTela.monstro.getNome());
         c.fill = GridBagConstraints.HORIZONTAL;
         //c.weightx = 0.5;
         c.gridx = 0;
@@ -36,7 +38,7 @@ public class TelaAnaliseMonstro extends JFrame{
         container.add(lbNome, c);
         
         lbVida = new JLabel();
-        lbVida.setText("VIDA: " + 
+        lbVida.setText(Config.texts().life + 
                 Integer.toString(conteudoTela.monstro.getVidaAtual()) + "/" + 
                 Integer.toString(conteudoTela.monstro.getVidaTotal()));
         c.fill = GridBagConstraints.HORIZONTAL;
@@ -46,7 +48,7 @@ public class TelaAnaliseMonstro extends JFrame{
         container.add(lbVida, c);
         
         lbElemento = new JLabel();
-        lbElemento.setText("ELEMENTO: " + conteudoTela.monstro.getTipoElemento());
+        lbElemento.setText(Config.texts().element + conteudoTela.monstro.getTipoElemento());
         c.fill = GridBagConstraints.HORIZONTAL;
         //c.weightx = 0.5;
         c.gridx = 0;
@@ -54,7 +56,7 @@ public class TelaAnaliseMonstro extends JFrame{
         container.add(lbElemento, c);
         
         lbForca = new JLabel();
-        lbForca.setText("FORCA: " + Integer.toString(conteudoTela.monstro.getForca()));
+        lbForca.setText(Config.texts().strength + Integer.toString(conteudoTela.monstro.getForca()));
         c.fill = GridBagConstraints.HORIZONTAL;
         //c.weightx = 0.5;
         c.gridx = 0;
@@ -62,14 +64,14 @@ public class TelaAnaliseMonstro extends JFrame{
         container.add(lbForca, c);
         
         lbEsquiva = new JLabel();
-        lbEsquiva.setText("ESQUIVA: " + (conteudoTela.monstro.getEsquiva()) + "%");
+        lbEsquiva.setText(Config.texts().agility + (conteudoTela.monstro.getEsquiva()) + "%");
         c.fill = GridBagConstraints.HORIZONTAL;
         //c.weightx = 0.5;
         c.gridx = 0;
         c.gridy = 4;
         container.add(lbEsquiva, c);
         
-        btVoltar = new JButton("VOLTAR");
+        btVoltar = new JButton(Config.texts().back);
         c.fill = GridBagConstraints.HORIZONTAL;
         c.gridx = 0;
         c.gridy = 5;

@@ -12,6 +12,8 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 
+import config.Config;
+
 public class TelaBatalhaBoss  extends TelaEncontro{
         
     private JLabel lbNome;
@@ -38,7 +40,7 @@ public class TelaBatalhaBoss  extends TelaEncontro{
     
     
     public TelaBatalhaBoss(){
-        super("BATALHA FINAAAAAL");
+        super(Config.texts().battle);
     
         setSize(900,700);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -51,21 +53,21 @@ public class TelaBatalhaBoss  extends TelaEncontro{
         
         /*----------DADOS JOGADOR----------*/
         lbNome = new JLabel();
-        lbNome.setText("NOME: ");
+        lbNome.setText(Config.texts().name);
         c.fill = GridBagConstraints.HORIZONTAL;
         c.gridx = 0;
         c.gridy = 0;
         container.add(lbNome, c);
 
         lbNivel = new JLabel();
-        lbNivel.setText("NIVEL: ");
+        lbNivel.setText(Config.texts().level);
         c.fill = GridBagConstraints.HORIZONTAL;
         c.gridx = 0;
         c.gridy = 1;
         container.add(lbNivel, c);
 
         lbVida = new JLabel();
-        lbVida.setText("VIDA: ");
+        lbVida.setText(Config.texts().life);
         c.fill = GridBagConstraints.HORIZONTAL;
         c.gridx = 0;
         c.gridy = 2;
@@ -103,21 +105,21 @@ public class TelaBatalhaBoss  extends TelaEncontro{
         container.add(lbVazia, c);
         /*----------DADOS MONSTRO----------*/
         lbNomeMonstro = new JLabel();
-        lbNomeMonstro.setText("NOME MONSTRO: DEMOGORGON");
+        lbNomeMonstro.setText(Config.texts().monsterName + "DEMOGORGON");
         c.fill = GridBagConstraints.HORIZONTAL;
         c.gridx = 2;
         c.gridy = 0;
         container.add(lbNomeMonstro, c);
 
         lbNivelMonstro = new JLabel();
-        lbNivelMonstro.setText("NIVEL MONSTRO: 10");
+        lbNivelMonstro.setText(Config.texts().level +"10");
         c.fill = GridBagConstraints.HORIZONTAL;
         c.gridx = 2;
         c.gridy = 1;
         container.add(lbNivelMonstro, c);
 
         lbVidaMonstro = new JLabel();
-        lbVidaMonstro.setText("VIDA MONSTRO: ");
+        lbVidaMonstro.setText(Config.texts().life);
         c.fill = GridBagConstraints.HORIZONTAL;
         c.gridx = 2;
         c.gridy = 2;
@@ -182,7 +184,7 @@ public class TelaBatalhaBoss  extends TelaEncontro{
         c.gridwidth = 1;
         /*----------BOTOES 1----------*/
         bt1 = new JButton();
-        bt1.setText("Atacar demogorgon");
+        bt1.setText(Config.texts().atackMonster);
         bt1.setActionCommand("1");
         c.fill = GridBagConstraints.HORIZONTAL;
         //c.weightx = 0.5;
@@ -191,7 +193,7 @@ public class TelaBatalhaBoss  extends TelaEncontro{
         container.add(bt1, c);
         
         bt2 = new JButton();
-        bt2.setText("Analizar demogorgon");
+        bt2.setText(Config.texts().analizeMonster);
         bt2.setActionCommand("2");
         c.fill = GridBagConstraints.HORIZONTAL;
         //c.weightx = 0.5;
@@ -200,7 +202,7 @@ public class TelaBatalhaBoss  extends TelaEncontro{
         container.add(bt2, c);
         
         bt3 = new JButton();
-        bt3.setText("Ver Feitiços");
+        bt3.setText(Config.texts().seeSpells);
         bt3.setActionCommand("3");
         c.fill = GridBagConstraints.HORIZONTAL;
         //c.weightx = 0.5;
@@ -217,7 +219,7 @@ public class TelaBatalhaBoss  extends TelaEncontro{
         container.add(bt4, c);
         /*----------BOTOES 2----------*/
         bt5 = new JButton();
-        bt5.setText("Usar Item");
+        bt5.setText(Config.texts().useItem);
         bt5.setActionCommand("5");
         c.fill = GridBagConstraints.HORIZONTAL;
         //c.weightx = 0.5;
@@ -226,7 +228,7 @@ public class TelaBatalhaBoss  extends TelaEncontro{
         container.add(bt5, c);
         
         bt6 = new JButton();
-        bt6.setText("Meus Atributos");
+        bt6.setText(Config.texts().myAttrs);
         bt6.setActionCommand("6");
         c.fill = GridBagConstraints.HORIZONTAL;
         //c.weightx = 0.5;
@@ -299,18 +301,18 @@ public class TelaBatalhaBoss  extends TelaEncontro{
 
     public void atualizaDados(ConteudoTelaBatalha dadosTelaCompactados) {
         if(dadosTelaCompactados.jogador != null){
-            String vidaJogador = ("VIDA: " +
+            String vidaJogador = (Config.texts().life +
                     dadosTelaCompactados.jogador.getVidaAtual()
                          + "/" + dadosTelaCompactados.jogador.getVidaTotal());
             lbVida.setText(vidaJogador);
-            lbVidaMonstro.setText("VIDA: " +
+            lbVidaMonstro.setText(Config.texts().life +
                     dadosTelaCompactados.monstro.getVidaAtual()
                         + "/" + dadosTelaCompactados.monstro.getVidaTotal());
             
-            lbNome.setText("NOME: " + dadosTelaCompactados.jogador.getNome());
-            lbNivel.setText("NIVEL: " + dadosTelaCompactados.jogador.getNivelInt());
-            lbNomeMonstro.setText("NOME: " + dadosTelaCompactados.monstro.getNome());
-            lbNivelMonstro.setText("NIVEL: " + 10);
+            lbNome.setText(Config.texts().name + dadosTelaCompactados.jogador.getNome());
+            lbNivel.setText(Config.texts().level + dadosTelaCompactados.jogador.getNivelInt());
+            lbNomeMonstro.setText(Config.texts().name + dadosTelaCompactados.monstro.getNome());
+            lbNivelMonstro.setText(Config.texts().level + 10);
             
             lbNarra1.setText("...");
             lbNarra2.setText("...");

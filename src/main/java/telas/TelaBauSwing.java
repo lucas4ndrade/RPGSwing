@@ -8,6 +8,8 @@ import java.awt.event.ActionListener;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+
+import config.Config;
 import controladores.ControladorBau;
 
 
@@ -28,7 +30,7 @@ public class TelaBauSwing extends JFrame{
     private boolean temConsumivel;
     
     public TelaBauSwing(ControladorBau aThis){
-        super("Bau");
+        super(Config.texts().chest);
         
         this.ctrlBau = aThis;
         
@@ -68,7 +70,7 @@ public class TelaBauSwing extends JFrame{
         
         //-----------NARRACAO-----------\\
         text1 = new JLabel();
-        text1.setText("Voce encontrou um baú, Voce abre e é isso que voce encontra:");
+        text1.setText(Config.texts().chestFoundNarration);
         c.fill = GridBagConstraints.HORIZONTAL;
         c.gridwidth = 3;
         c.gridx = 0;
@@ -78,7 +80,7 @@ public class TelaBauSwing extends JFrame{
         
         if(temArma && !temGrimorio && !temConsumivel){
             txtItens = new JLabel();
-            txtItens.setText("Uma arma.");
+            txtItens.setText(Config.texts().aWeapon);
             c.fill = GridBagConstraints.HORIZONTAL;
             //c.weightx = 0.5;
             c.gridx = 0;
@@ -86,7 +88,7 @@ public class TelaBauSwing extends JFrame{
             container.add(txtItens, c);
         } else if(!temArma && temGrimorio && !temConsumivel){
             txtItens = new JLabel();
-            txtItens.setText("Um grimorio.");
+            txtItens.setText(Config.texts().aGrimoire);
             c.fill = GridBagConstraints.HORIZONTAL;
             //c.weightx = 0.5;
             c.gridx = 0;
@@ -94,7 +96,7 @@ public class TelaBauSwing extends JFrame{
             container.add(txtItens, c);
         } else if(!temArma && !temGrimorio && temConsumivel){
             txtItens = new JLabel();
-            txtItens.setText("Um consumivel.");
+            txtItens.setText(Config.texts().aConsumable);
             c.fill = GridBagConstraints.HORIZONTAL;
             //c.weightx = 0.5;
             c.gridx = 0;
@@ -102,7 +104,7 @@ public class TelaBauSwing extends JFrame{
             container.add(txtItens, c);
         } else if(temArma && !temGrimorio && temConsumivel){
             txtItens = new JLabel();
-            txtItens.setText("Uma arma e um consumivel.");
+            txtItens.setText(Config.texts().aWeaponAndConsumable);
             c.fill = GridBagConstraints.HORIZONTAL;
             //c.weightx = 0.5;
             c.gridx = 0;
@@ -110,7 +112,7 @@ public class TelaBauSwing extends JFrame{
             container.add(txtItens, c);
         } else if (!temArma && temGrimorio && temConsumivel){
             txtItens = new JLabel();
-            txtItens.setText("Um consumivel e um grimório");
+            txtItens.setText(Config.texts().aGrimoireAndConsumable);
             c.fill = GridBagConstraints.HORIZONTAL;
             //c.weightx = 0.5;
             c.gridx = 0;
@@ -118,7 +120,7 @@ public class TelaBauSwing extends JFrame{
             container.add(txtItens, c);
         } else if (temArma && temGrimorio && !temConsumivel){
             txtItens = new JLabel();
-            txtItens.setText("Uma Arma e um grimório");
+            txtItens.setText(Config.texts().aWeaponAndGrimoire);
             c.fill = GridBagConstraints.HORIZONTAL;
             //c.weightx = 0.5;
             c.gridx = 0;
@@ -126,7 +128,7 @@ public class TelaBauSwing extends JFrame{
             container.add(txtItens, c);
         } else if (temArma && temGrimorio && temConsumivel){
             txtItens = new JLabel();
-            txtItens.setText("Uma Arma, um grimório e um consumivel");
+            txtItens.setText(Config.texts().aWeaponConsumableAndGrimoire);
             c.fill = GridBagConstraints.HORIZONTAL;
             //c.weightx = 0.5;
             c.gridx = 0;
@@ -147,21 +149,21 @@ public class TelaBauSwing extends JFrame{
         
         
         //------------BOTOES-----------\\
-        btMostraItens = new JButton("VER ITENS DA BOLSA");
+        btMostraItens = new JButton(Config.texts().seeBagItens);
         btMostraItens.setActionCommand("1");
         c.fill = GridBagConstraints.HORIZONTAL;
         c.gridx = 1;
         c.gridy = 5;
         container.add(btMostraItens, c);
         
-        btMostraArma = new JButton("VER SUA ARMA");
+        btMostraArma = new JButton(Config.texts().seePlayerWeapon);
         btMostraArma.setActionCommand("2");
         c.fill = GridBagConstraints.HORIZONTAL;
         c.gridx = 0;
         c.gridy = 5;
         container.add(btMostraArma, c);
         
-        btSair = new JButton("SAIR");
+        btSair = new JButton(Config.texts().exit);
         if(!temGrimorio){
             btSair.setActionCommand("0");
         } else {
@@ -176,7 +178,7 @@ public class TelaBauSwing extends JFrame{
         int i = 6;
         if(temArma){
             btComparaArmas = new JButton();
-            btComparaArmas.setText("PEGAR ARMA DO BAU");
+            btComparaArmas.setText(Config.texts().takeChestWeapon);
             btComparaArmas.setActionCommand("3");
             c.fill = GridBagConstraints.HORIZONTAL;
             c.gridwidth = 3;
@@ -189,7 +191,7 @@ public class TelaBauSwing extends JFrame{
         
         if(temConsumivel){
             btVerItensBau = new JButton();
-            btVerItensBau.setText("PEGAR CONSUM�?VEL DO BAU");
+            btVerItensBau.setText(Config.texts().takeChestConsumable);
             btVerItensBau.setActionCommand("4");
             c.gridwidth = 3;
             c.fill = GridBagConstraints.HORIZONTAL;
@@ -212,7 +214,7 @@ public class TelaBauSwing extends JFrame{
     }
     
     public TelaBauSwing(){
-        super("AVISO");
+        super(Config.texts().warning);
         
         setSize(500,300);
         
@@ -223,14 +225,14 @@ public class TelaBauSwing extends JFrame{
         setLocationRelativeTo(null);
         
         text1 = new JLabel();
-        text1.setText("Voce pegou o grimorio e saiu da sala");
+        text1.setText(Config.texts().roomExitNarration);
         c.fill = GridBagConstraints.HORIZONTAL;
         c.gridx = 0;
         c.gridy = 0;
         container.add(text1, c);
         
         
-        btSair = new JButton("OK");
+        btSair = new JButton(Config.texts().ok);
         btSair.setActionCommand("0");
         c.fill = GridBagConstraints.HORIZONTAL;
         c.gridx = 0;

@@ -73,7 +73,7 @@ public class TelaSelecionarLinguagem extends JFrame{
             if(e.getSource() == btPort){
                 Config.getInstance().setLang("ptBR");
             }else if(e.getSource() == btEs){
-                Config.getInstance().setLang("es");
+                Config.getInstance().setLang("esMX");
             }else if(e.getSource() == btEng){
                 Config.getInstance().setLang("usENG");
             }

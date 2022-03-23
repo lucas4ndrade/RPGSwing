@@ -1,9 +1,11 @@
 package exceptions;
 
+import config.Config;
+
 public class NomeMuitoGrandeException extends Exception{
     
     public NomeMuitoGrandeException(){
-        super("O nome escolhido é grande demais...");
+        super(Config.texts().nameTooLongWarning);
     }
     
 }

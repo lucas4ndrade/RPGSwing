@@ -12,6 +12,8 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
+
+import config.Config;
 import entidades.Feitico;
 import entidades.Item;
 import exceptions.NadaSelecionadoException;
@@ -44,7 +46,7 @@ public class TelaDeletarCoisasFogueira extends JFrame{
         GridBagConstraints c = new GridBagConstraints();
         
         texto = new JLabel();
-        texto.setText("Escolha um feitico para esquecer:");
+        texto.setText(Config.texts().spellForgetChoiceLabel);
         c.fill = GridBagConstraints.HORIZONTAL;
         c.gridx = 0;
         c.gridy = 0;
@@ -63,14 +65,14 @@ public class TelaDeletarCoisasFogueira extends JFrame{
         
         setLocationRelativeTo(null);
         
-        btOk = new JButton("ESQUECER");
+        btOk = new JButton(Config.texts().forget);
         btOk.setActionCommand("ESQUECER");
         c.fill = GridBagConstraints.HORIZONTAL;
         c.gridx = 0;
         c.gridy = 2;
         container.add(btOk, c);
         
-        btVoltar = new JButton("VOLTAR");
+        btVoltar = new JButton(Config.texts().back);
         btVoltar.setActionCommand("VOLTAR");
         c.fill = GridBagConstraints.HORIZONTAL;
         c.gridx = 0;
@@ -83,7 +85,7 @@ public class TelaDeletarCoisasFogueira extends JFrame{
     }
 
     public TelaDeletarCoisasFogueira(ArrayList<ConteudoTelaFogueira> conteudos) {
-        super("DESCARTAR ITENS");
+        super(Config.texts().discardItens);
         
         consumiveis = new ArrayList<>();
         for(ConteudoTelaFogueira cont : conteudos){
@@ -98,7 +100,7 @@ public class TelaDeletarCoisasFogueira extends JFrame{
         GridBagConstraints c = new GridBagConstraints();
         
         texto = new JLabel();
-        texto.setText("Escolha um item para descartar:");
+        texto.setText(Config.texts().discardItemLabel);
         c.fill = GridBagConstraints.HORIZONTAL;
         c.gridx = 0;
         c.gridy = 0;
@@ -117,14 +119,14 @@ public class TelaDeletarCoisasFogueira extends JFrame{
         
         setLocationRelativeTo(null);
         
-        btOk = new JButton("DESCARTAR");
+        btOk = new JButton(Config.texts().discard);
         btOk.setActionCommand("DESCARTAR");
         c.fill = GridBagConstraints.HORIZONTAL;
         c.gridx = 0;
         c.gridy = 2;
         container.add(btOk, c);
         
-        btVoltar = new JButton("VOLTAR");
+        btVoltar = new JButton(Config.texts().back);
         btVoltar.setActionCommand("VOLTAR");
         c.fill = GridBagConstraints.HORIZONTAL;
         c.gridx = 0;
@@ -138,7 +140,7 @@ public class TelaDeletarCoisasFogueira extends JFrame{
     }
     
     public TelaDeletarCoisasFogueira(boolean ehFeitico){
-        super("AVISO");
+        super(Config.texts().warning);
         
         setSize(400,300);
         
@@ -150,21 +152,21 @@ public class TelaDeletarCoisasFogueira extends JFrame{
         
         if(ehFeitico == false){
             lblAviso = new JLabel();
-            lblAviso.setText("Item descartado com sucesso");
+            lblAviso.setText(Config.texts().sucessDiscard);
             c.fill = GridBagConstraints.HORIZONTAL;
             c.gridx = 0;
             c.gridy = 0;
             container.add(lblAviso, c);
         } else {
             lblAviso = new JLabel();
-            lblAviso.setText("Feitiço esquecido com sucesso");
+            lblAviso.setText(Config.texts().sucessForgetSpell);
             c.fill = GridBagConstraints.HORIZONTAL;
             c.gridx = 0;
             c.gridy = 0;
             container.add(lblAviso, c);
         }
         
-        btVoltar = new JButton("OK");
+        btVoltar = new JButton(Config.texts().ok);
         btVoltar.setActionCommand("OK");
         c.fill = GridBagConstraints.HORIZONTAL;
         c.gridx = 0;
@@ -192,7 +194,12 @@ public class TelaDeletarCoisasFogueira extends JFrame{
     }
     
     private void atualizaDadosFeitico() {
-        String[] nomeColunas = {"INDICE", "NOME", "DANO", "TIPO ELEMENTO"};
+        String[] nomeColunas = {
+            Config.texts().index, 
+            Config.texts().nameSimple, 
+            Config.texts().damage, 
+            Config.texts().elementType
+        };
         Object[][] tabelaParaPorNaTabela = new Object[feiticos.size()][4];
         int i = 0;
         for(Feitico feitico: feiticos){
@@ -204,7 +211,10 @@ public class TelaDeletarCoisasFogueira extends JFrame{
     }
     
     private void atualizaDadosItem() {
-        String[] nomeColunas = {"INDICE", "NOME"};
+        String[] nomeColunas = {
+            Config.texts().index, 
+            Config.texts().nameSimple,
+        };
         Object[][] tabelaParaPorNaTabela = new Object[consumiveis.size()][2];
         int i = 0;
         for(Item item: consumiveis){

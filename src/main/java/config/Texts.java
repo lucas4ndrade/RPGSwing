@@ -119,4 +119,5 @@ public class Texts {
   public String nothingSelectedWarning = "Not Specified";
   public String nameTooLongWarning = "Not Specified";
   public String emptyNameWarning = "Not Specified";
+  public String consumableName = "Not Specified";
 }

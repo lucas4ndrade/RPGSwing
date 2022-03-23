@@ -1,9 +1,11 @@
 package exceptions;
 
+import config.Config;
+
 public class FeiticoNaoListadoException extends Exception {
 
     public FeiticoNaoListadoException(){
-        super("Feitiço pedido não está listado");
+        super(Config.texts().notListedSpellWarning);
     }
     
 }

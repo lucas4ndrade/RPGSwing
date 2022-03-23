@@ -43,10 +43,10 @@ public class Jogador extends Ser implements IJogador {
         this.feiticos.add(new Feitico(this.getNivelInt(), "Furia de Poseidon", TipoElemento.AGUA));
         this.feiticos.add(new Feitico(this.getNivelInt(), "Chama do Dragão", TipoElemento.FOGO));
         this.feiticos.add(new Feitico(this.getNivelInt(), "Erva Venenosa", TipoElemento.GRAMA));
-        this.bolsa.addConsumivel(new Consumivel("Pocao de Vida"));
-        this.bolsa.addConsumivel(new Consumivel("Pocao de Vida"));
-        this.bolsa.addConsumivel(new Consumivel("Pocao de Vida"));
-        this.bolsa.addConsumivel(new Consumivel("Pocao de Vida"));
+        this.bolsa.addConsumivel(new Consumivel());
+        this.bolsa.addConsumivel(new Consumivel());
+        this.bolsa.addConsumivel(new Consumivel());
+        this.bolsa.addConsumivel(new Consumivel());
     }
     
     public ArrayList<Feitico> verFeiticos(TipoElemento tipo){

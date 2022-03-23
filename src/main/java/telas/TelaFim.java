@@ -9,6 +9,8 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 
+import config.Config;
+
 public class TelaFim extends JFrame{
     
     private JLabel lb;
@@ -27,14 +29,14 @@ public class TelaFim extends JFrame{
         c.ipadx = 200;
         
         lb = new JLabel();
-        lb.setText("O seu herói não foi páreo para os poderosos monstros que habitam a masmorra!");
+        lb.setText(Config.texts().gameOverNarration);
         c.fill = GridBagConstraints.HORIZONTAL;
         c.gridx = 0;
         c.gridy = 0;
         container.add(lb, c);
         
         bt = new JButton();
-        bt.setText("OK");
+        bt.setText(Config.texts().ok);
         c.fill = GridBagConstraints.HORIZONTAL;
         c.gridx = 0;
         c.gridy = 3;

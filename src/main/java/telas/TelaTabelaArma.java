@@ -12,6 +12,9 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
+
+import config.Config;
+
 import javax.swing.JLabel;
 
 public class TelaTabelaArma extends JFrame{
@@ -27,7 +30,7 @@ public class TelaTabelaArma extends JFrame{
     private JLabel txtArmaBau;
     
     public TelaTabelaArma(ConteudoTelaBau arma, boolean armaJogador){
-        super("SUA ARMA");
+        super(Config.texts().yourWeapon);
         this.armaJogador = arma.armaJogador;
         
         this.atualizaDadosSoParaJogador();
@@ -50,7 +53,7 @@ public class TelaTabelaArma extends JFrame{
         
         setLocationRelativeTo(null);
         
-        btOk = new JButton("OK");
+        btOk = new JButton(Config.texts().ok);
         btOk.setActionCommand("OK");
         c.fill = GridBagConstraints.HORIZONTAL;
         c.gridx = 0;
@@ -62,7 +65,7 @@ public class TelaTabelaArma extends JFrame{
     }
     
     public TelaTabelaArma(ConteudoTelaBau armas){
-        super("TROCAR ARMA");
+        super(Config.texts().chanveWeapon);
         this.armaJogador = armas.armaJogador;
         this.armaBau = armas.armaBau;
         
@@ -84,7 +87,7 @@ public class TelaTabelaArma extends JFrame{
         
         setLocationRelativeTo(null);
         
-        txtArmaJogador = new JLabel("ARMA DO JOGADOR");
+        txtArmaJogador = new JLabel(Config.texts().playerWeapon);
         c.fill = GridBagConstraints.HORIZONTAL;
         c.gridx = 0;
         c.gridy = 0;
@@ -99,13 +102,13 @@ public class TelaTabelaArma extends JFrame{
         spBaseTabela = new JScrollPane(tabelaArmaBau);
         container.add(spBaseTabela, c);
         
-        txtArmaBau = new JLabel("ARMA DO BAU");
+        txtArmaBau = new JLabel(Config.texts().chestWeapon);
         c.fill = GridBagConstraints.HORIZONTAL;
         c.gridx = 1;
         c.gridy = 0;
         container.add(txtArmaBau, c);
         
-        btTrocar = new JButton("TROCAR A ARMA ATUAL COM A DO BAU");
+        btTrocar = new JButton(Config.texts().exchangeCurrentWeaponWithChest);
         btTrocar.setActionCommand("TROCAR");
         c.fill = GridBagConstraints.HORIZONTAL;
         c.gridwidth = 2;
@@ -113,7 +116,7 @@ public class TelaTabelaArma extends JFrame{
         c.gridy = 2;
         container.add(btTrocar, c);
         
-        btOk = new JButton("VOLTAR");
+        btOk = new JButton(Config.texts().back);
         btOk.setActionCommand("OK");
         c.fill = GridBagConstraints.HORIZONTAL;
         c.gridx = 0;
@@ -134,7 +137,7 @@ public class TelaTabelaArma extends JFrame{
     }
     
     private void atualizaDadosSoParaJogador(){
-        String[] nomeColunas = {"NOME", "DANO"};
+        String[] nomeColunas = {Config.texts().nameSimple, Config.texts().damage};
         Object[][] tabelaParaPorNaTabelaJogador = new Object[1][2];
         Object[] infos = { armaJogador.getNome(), armaJogador.getDano()};
         tabelaParaPorNaTabelaJogador[0] = infos;
@@ -143,7 +146,7 @@ public class TelaTabelaArma extends JFrame{
     }
     
     private void atualizaDados(){
-        String[] nomeColunas = {"NOME", "DANO"};
+        String[] nomeColunas = {Config.texts().nameSimple, Config.texts().damage};
         Object[][] tabelaParaPorNaTabelaJogador = new Object[1][2];
         Object[] infosJogador = { armaJogador.getNome(), armaJogador.getDano()};
         tabelaParaPorNaTabelaJogador[0] = infosJogador;

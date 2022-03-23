@@ -115,5 +115,6 @@
 	"notListedSpellWarning": "Feitiço pedido não está listado",
 	"nothingSelectedWarning": "Nada foi selecionado, por favor selecione algo da tabela para executar a ação...",
 	"nameTooLongWarning": "O nome escolhido é grande demais...",
-	"emptyNameWarning":"O nome não pode estar vazio..."
+	"emptyNameWarning":"O nome não pode estar vazio...",
+  "consumableName": "Feijoada carregada" 
 }

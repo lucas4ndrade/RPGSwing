@@ -1,12 +1,14 @@
 package entidades;
 
+import config.Config;
+
 public class Monstro extends Ser{
     private int forca;
     private double esquiva;
     private TipoElemento tipoElemento;
 
     public Monstro(int nivel , TipoElemento tipoElemento) {
-        super("Monstro nivel: " + nivel);
+        super(Config.texts().monsterNamePrefix + nivel);
         super.setVidaAtual(10+(10*nivel));
         super.setVidaTotal(10+(10*nivel));
         this.forca = (int)((Math.random()*((0.2*super.getVidaTotal() - 0.10*super.getVidaTotal()) + 1))+0.10*20);

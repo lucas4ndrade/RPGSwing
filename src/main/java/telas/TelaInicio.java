@@ -9,6 +9,8 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
+
+import config.Config;
 import controladores.ControladorGeral;
 import exceptions.NomeMuitoGrandeException;
 import exceptions.NomeVazioException;
@@ -20,7 +22,7 @@ public class TelaInicio extends JFrame{
     private JButton bt;
     
     public TelaInicio(){
-        super("NEW GAME");
+        super(Config.texts().newGame);
         
         setSize(1024,384);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -30,7 +32,7 @@ public class TelaInicio extends JFrame{
         GridBagConstraints c = new GridBagConstraints();
         
         lb1 = new JLabel();
-        lb1.setText("Seja Bem Vindo, Herói");
+        lb1.setText(Config.texts().wellcomeNarration1);
         c.fill = GridBagConstraints.HORIZONTAL;
         //c.weightx = 0.5;
         c.gridx = 0;
@@ -38,7 +40,7 @@ public class TelaInicio extends JFrame{
         container.add(lb1, c);
         
         lb2 = new JLabel();
-        lb2.setText("Você é um feiticeiro, estudou por anos na escola de magia, e agora chegou a hora de colocar seus conhecimentos em prática. Primeiramente, qual o seu nome?");
+        lb2.setText(Config.texts().wellcomeNarration2); 
         c.fill = GridBagConstraints.HORIZONTAL;
         //c.weightx = 0.5;
         c.gridx = 0;
@@ -53,7 +55,7 @@ public class TelaInicio extends JFrame{
         container.add(tf, c);
         
         bt = new JButton();
-        bt.setText("ESTOU PREPARADO");
+        bt.setText(Config.texts().ready);
         c.fill = GridBagConstraints.HORIZONTAL;
         //c.weightx = 0.5;
         c.gridx = 0;

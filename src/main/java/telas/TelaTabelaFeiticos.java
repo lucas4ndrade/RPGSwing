@@ -13,6 +13,8 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
+
+import config.Config;
 import entidades.Feitico;
 
 public class TelaTabelaFeiticos extends JFrame{
@@ -25,7 +27,7 @@ public class TelaTabelaFeiticos extends JFrame{
     private boolean boss;
     
     public TelaTabelaFeiticos(ArrayList<ConteudoTelaBatalha> conteudos){
-        super("ATAQUE");
+        super(Config.texts().atack);
         feiticos = new ArrayList<>();
         for(ConteudoTelaBatalha cont : conteudos){
             feiticos.add(cont.feitico);
@@ -50,7 +52,7 @@ public class TelaTabelaFeiticos extends JFrame{
         
         setLocationRelativeTo(null);
         
-        btAtaque = new JButton("ATACAR!!");
+        btAtaque = new JButton(Config.texts().atackExclamation);
         btAtaque.setActionCommand("ATAQUE");
         c.fill = GridBagConstraints.HORIZONTAL;
         c.gridx = 0;
@@ -62,7 +64,7 @@ public class TelaTabelaFeiticos extends JFrame{
     }
     
     public TelaTabelaFeiticos(ArrayList<ConteudoTelaBatalha> conteudos, boolean b){
-        super("FEITICOS");
+        super(Config.texts().spells);
         feiticos = new ArrayList<>();
         for(ConteudoTelaBatalha cont : conteudos){
             feiticos.add(cont.feitico);
@@ -87,7 +89,7 @@ public class TelaTabelaFeiticos extends JFrame{
         
         setLocationRelativeTo(null);
         
-        btAtaque = new JButton("VOLTAR");
+        btAtaque = new JButton(Config.texts().back);
         btAtaque.setActionCommand("VOLTAR");
         c.fill = GridBagConstraints.HORIZONTAL;
         c.gridx = 0;
@@ -107,7 +109,7 @@ public class TelaTabelaFeiticos extends JFrame{
     }
     
     private void atualizaDados(){
-        String[] nomeColunas = {"INDICE", "NOME", "DANO", "TIPO ELEMENTO"};
+        String[] nomeColunas = {Config.texts().index, Config.texts().name, Config.texts().damage, Config.texts().elementType};
         Object[][] tabelaParaPorNaTabela = new Object[feiticos.size()][4];
         int i = 0;
         for(Feitico feitico: feiticos){

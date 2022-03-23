@@ -14,6 +14,8 @@ import javax.swing.JFrame;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
 
+import config.Config;
+
 
 public class TelaListagemBasicaFogueira extends JFrame{
 
@@ -25,7 +27,7 @@ public class TelaListagemBasicaFogueira extends JFrame{
     private JTable tabelaBolsa;
     
     public TelaListagemBasicaFogueira(ArrayList<ConteudoTelaFogueira> eventos){
-        super("DIARIO");
+        super(Config.texts().diary);
         this.diario = new ArrayList<>();
         for(ConteudoTelaFogueira evento: eventos){
             diario.add(evento.evento);
@@ -48,7 +50,7 @@ public class TelaListagemBasicaFogueira extends JFrame{
         
         setLocationRelativeTo(null);
         
-        btOk = new JButton("OK");
+        btOk = new JButton(Config.texts().ok);
         btOk.setActionCommand("OK");
         c.fill = GridBagConstraints.HORIZONTAL;
         c.gridx = 0;
@@ -60,7 +62,7 @@ public class TelaListagemBasicaFogueira extends JFrame{
     }
 
     public TelaListagemBasicaFogueira(ArrayList<ConteudoTelaFogueira> itens, boolean contexto) {
-        super("BOLSA");
+        super(Config.texts().bag);
         this.itensTabelaJogador = new ArrayList<>();
         for(ConteudoTelaFogueira item: itens){
             itensTabelaJogador.add(item.item);
@@ -83,7 +85,7 @@ public class TelaListagemBasicaFogueira extends JFrame{
         
         setLocationRelativeTo(null);
         
-        btOk = new JButton("OK");
+        btOk = new JButton(Config.texts().ok);
         btOk.setActionCommand("OK");
         c.fill = GridBagConstraints.HORIZONTAL;
         c.gridx = 0;
@@ -104,7 +106,7 @@ public class TelaListagemBasicaFogueira extends JFrame{
     }
     
     private void atualizaDadosDiario(){
-        String[] nomeColunas = {"", "EVENTO"};
+        String[] nomeColunas = {"", Config.texts().event};
         Object[][] tabelaParaPorNaTabela = new Object[diario.size()][2];
         int i = 0;
         for(TipoEvento evento: diario){
@@ -116,7 +118,7 @@ public class TelaListagemBasicaFogueira extends JFrame{
     }
 
     private void atualizaDadosItens(){
-        String[] nomeColunas = {"", "NOME"};
+        String[] nomeColunas = {"", Config.texts().name};
         Object[][] tabelaParaPorNaTabelaBolsa = new Object[itensTabelaJogador.size()][2];
         int i = 0;
         for(Item item: itensTabelaJogador){

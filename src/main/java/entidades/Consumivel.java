@@ -1,9 +1,11 @@
 package entidades;
 
+import config.Config;
+
 public class Consumivel extends Item {
     
-    public Consumivel(String nome){
-        super(nome);
+    public Consumivel(){
+        super(Config.texts().consumableName);
     }
     
     /**

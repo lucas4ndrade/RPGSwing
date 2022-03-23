@@ -10,6 +10,8 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 
+import config.Config;
+
 public class TelaInicioBatalhaBoss extends JFrame{
     
     private JLabel lb1;
@@ -17,7 +19,7 @@ public class TelaInicioBatalhaBoss extends JFrame{
     private boolean continuar;
     
     public TelaInicioBatalhaBoss(){
-        super("NEW GAME");
+        super(Config.texts().battle);
         
         setSize(1024,384);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -27,7 +29,7 @@ public class TelaInicioBatalhaBoss extends JFrame{
         GridBagConstraints c = new GridBagConstraints();
         
         lb1 = new JLabel();
-        lb1.setText("Você entra numa sala enorme de odor fetido...");
+        lb1.setText(Config.texts().finalBossNarration1);
         c.fill = GridBagConstraints.HORIZONTAL;
         //c.weightx = 0.5;
         c.gridx = 0;
@@ -35,7 +37,7 @@ public class TelaInicioBatalhaBoss extends JFrame{
         container.add(lb1, c);
         
         lb1 = new JLabel();
-        lb1.setText("Ja sabe o que lhe espera, entao entra mais afundo na sala quando...");
+        lb1.setText(Config.texts().finalBossNarration2);
         c.fill = GridBagConstraints.HORIZONTAL;
         //c.weightx = 0.5;
         c.gridx = 0;
@@ -43,7 +45,7 @@ public class TelaInicioBatalhaBoss extends JFrame{
         container.add(lb1, c);
         
         lb1 = new JLabel();
-        lb1.setText("Um DEMOGORGON do tamanho de cinco homens aparece na sua frente!!");
+        lb1.setText(Config.texts().finalBossNarration3);
         c.fill = GridBagConstraints.HORIZONTAL;
         //c.weightx = 0.5;
         c.gridx = 0;
@@ -52,7 +54,7 @@ public class TelaInicioBatalhaBoss extends JFrame{
         
         
         lb1 = new JLabel();
-        lb1.setText("Imediatamente você pega seu cajado e se prepara para a batalha!!");
+        lb1.setText(Config.texts().finalBossNarration4);
         c.fill = GridBagConstraints.HORIZONTAL;
         //c.weightx = 0.5;
         c.gridx = 0;
@@ -60,7 +62,7 @@ public class TelaInicioBatalhaBoss extends JFrame{
         container.add(lb1, c);
         
         bt = new JButton();
-        bt.setText("ESTOU PREPARADO");
+        lb1.setText(Config.texts().ready);
         c.fill = GridBagConstraints.HORIZONTAL;
         //c.weightx = 0.5;
         c.gridx = 0;

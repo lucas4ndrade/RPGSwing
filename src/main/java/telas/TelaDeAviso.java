@@ -9,6 +9,8 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 
+import config.Config;
+
 
 
 public class TelaDeAviso extends JFrame{
@@ -17,7 +19,7 @@ public class TelaDeAviso extends JFrame{
     private final JButton btVoltar;
 
     public TelaDeAviso(String message) {
-        super("AVISO");
+        super(Config.texts().warning);
         
         setSize(500,300);
         
@@ -35,7 +37,7 @@ public class TelaDeAviso extends JFrame{
         container.add(lblAviso, c);
         
         
-        btVoltar = new JButton("OK");
+        btVoltar = new JButton(Config.texts().ok);
         btVoltar.setActionCommand("VOLTAR");
         c.fill = GridBagConstraints.HORIZONTAL;
         c.gridx = 0;

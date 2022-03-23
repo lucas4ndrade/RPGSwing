@@ -1,9 +1,11 @@
 package exceptions;
 
+import config.Config;
+
 public class NomeVazioException extends Exception{
     
     public NomeVazioException(){
-        super("O nome não pode estar vazio...");
+        super(Config.texts().emptyNameWarning);
     }
     
 }

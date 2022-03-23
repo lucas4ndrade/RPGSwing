@@ -16,6 +16,8 @@ import java.util.ArrayList;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
 
+import config.Config;
+
 public class TelaSavedGame extends JFrame{
     
     private JTable tabela;
@@ -39,7 +41,7 @@ public class TelaSavedGame extends JFrame{
         GridBagConstraints c = new GridBagConstraints();
         
         lb = new JLabel();
-        lb.setText("Selecione o herói que deseja excluir ou jogar");
+        lb.setText(Config.texts().selectSave);
         c.fill = GridBagConstraints.HORIZONTAL;
         //c.weightx = 0.5;
         c.gridx = 0;
@@ -47,7 +49,7 @@ public class TelaSavedGame extends JFrame{
         container.add(lb, c);
         
         btContinue = new JButton();
-        btContinue.setText("CONTINUAR");
+        btContinue.setText(Config.texts().continueText);
         btContinue.setActionCommand("CONTINUAR");
         c.fill = GridBagConstraints.HORIZONTAL;
         //c.weightx = 0.5;
@@ -56,7 +58,7 @@ public class TelaSavedGame extends JFrame{
         container.add(btContinue, c);
         
         btDelete = new JButton();
-        btDelete.setText("EXCLUIR");
+        btDelete.setText(Config.texts().delete);
         btDelete.setActionCommand("EXCLUIR");
         c.fill = GridBagConstraints.HORIZONTAL;
         //c.weightx = 0.5;
@@ -65,7 +67,7 @@ public class TelaSavedGame extends JFrame{
         container.add(btDelete, c);
         
         btNewGame = new JButton();
-        btNewGame.setText("NEW GAME");
+        btNewGame.setText(Config.texts().newGame);
         btNewGame.setActionCommand("NEW GAME");
         c.fill = GridBagConstraints.HORIZONTAL;
         //c.weightx = 0.5;
@@ -95,7 +97,7 @@ public class TelaSavedGame extends JFrame{
     }
     
     private void atualizaDados(){
-        String[] nomeColunas = {"", "NOME", "NIVEL"};
+        String[] nomeColunas = {"", Config.texts().nameSimple, Config.texts().level};
         Object[][] tabelaParaPorNaTabela = new Object[jogadores.size()][3];
         int i = 0;
         for(Jogador jogador: jogadores){
