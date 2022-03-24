@@ -146,7 +146,7 @@ public class TelaBatalhaBoss  extends TelaEncontro{
         container.add(lbVazia, c);
         
         lbImgAuxiliar = new JLabel();
-        lbImgAuxiliar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/Monstro.PNG")));
+        lbImgAuxiliar.setIcon(new javax.swing.ImageIcon(Config.monsterResource()));
         c.fill = GridBagConstraints.VERTICAL;
         c.gridx = 2;
         c.gridy = 4;

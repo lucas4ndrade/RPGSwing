@@ -3,6 +3,7 @@ package config;
 import java.io.IOException;
 import java.net.URI;
 import java.net.URISyntaxException;
+import java.net.URL;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.Locale;
@@ -15,6 +16,7 @@ public class Config {
     private static Config instancia;
     private static Texts texts;
     private static boolean languageSelected;
+    private static URL monsterResource;
 
     private Config() {
         texts = new Texts();
@@ -35,6 +37,8 @@ public class Config {
     
         Gson gson = new Gson();
         Texts newTexts = gson.fromJson(textJsonString, Texts.class);
+
+        monsterResource = getClass().getResource("/imagens/Monstro_"+selectedLang+".PNG");
 
         locale = langToLocale(selectedLang);
         languageSelected = true;
@@ -69,6 +73,10 @@ public class Config {
 
     public static Boolean languageSelected() {
         return languageSelected;
+    }
+
+    public static URL monsterResource() {
+        return monsterResource;
     }
 
 
